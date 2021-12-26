@@ -29,5 +29,4 @@ const App = () => (
 		<span>Test</span>
 	</>
 	);
-
 export default App;
