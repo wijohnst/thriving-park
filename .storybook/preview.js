@@ -1,3 +1,7 @@
+import { withThemesProvider } from "themeprovider-storybook";
+
+import { defaultTheme } from '../src/themes'
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -7,3 +11,9 @@ export const parameters = {
     },
   },
 }
+
+const themes = [
+	defaultTheme,
+]
+
+export const decorators = [withThemesProvider(themes)];
