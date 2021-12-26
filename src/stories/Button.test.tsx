@@ -1,6 +1,6 @@
 // Global Imports
 import React from 'react';
-import '@testing-library/jest-dom';
+
 
 // Local Imports
 import { render } from 'utils/test-utils';
