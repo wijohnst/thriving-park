@@ -8,16 +8,17 @@ import { standardWrapper } from 'stories/decoratorStyles';
 export default {
   title: 'Design System/Atoms/Button',
   component: Button,
-	decorators: [
+  decorators: [
 		(Story) => (
 			<div style={
 				{
 					backgroundColor: defaultTheme.primaryBlue,
 					...standardWrapper,
-				}}>
+				}
+			}>
 				<Story />
 			</div>
-		)
+		),
 	],
 	argTypes: {},
 } as ComponentMeta<typeof Button>;
@@ -34,6 +35,4 @@ export const MobilePrimary = Template.bind({});
 MobilePrimary.args = {
 	label: 'MOBILE PRIMARY',
 	isMobile: true,
-}
-
-
+};
