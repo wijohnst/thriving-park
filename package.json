@@ -63,6 +63,7 @@
     "@types/styled-components": "^5.1.19",
     "jest-watch-typeahead": "^0.6.5",
     "styled-components": "^5.3.3",
+    "themeprovider-storybook": "^1.8.0",
     "webpack": "^5.65.0"
   }
 }
