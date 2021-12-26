@@ -13,12 +13,12 @@ export default {
 			<div style={
 				{
 					backgroundColor: defaultTheme.primaryBlue,
-					...standardWrapper
+					...standardWrapper,
 				}
 			}>
 				<Story />
 			</div>
-		)
+		),
 	],
 	argTypes: {},
 } as ComponentMeta<typeof Label>;
@@ -28,24 +28,23 @@ const Template: ComponentStory<typeof Label> = (args) => <Label {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
 	text: 'Label',
-	displayStyle: "flexLeft",
+	displayStyle: 'flexLeft',
 };
-
 
 export const CenterLabel = Template.bind({});
 CenterLabel.args = {
 	...Primary.args,
-	displayStyle: "flexCenter",
-}
+	displayStyle: 'flexCenter',
+};
 
 export const RightLabel = Template.bind({});
 RightLabel.args = {
 	...Primary.args,
-	displayStyle: "flexRight",
-}
+	displayStyle: 'flexRight',
+};
 
 export const Underlined = Template.bind({});
 Underlined.args = {
 	...Primary.args,
 	isUnderlined: true,
-}
+};
