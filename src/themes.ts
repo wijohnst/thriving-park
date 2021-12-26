@@ -14,4 +14,5 @@ export const defaultTheme = {
   borderRadius: '5px 5px 5px 5px',
   // TEXT
   primaryFontFamily: "'Helvetica', sans-serif",
+  secondaryFontFamily: "'Permanent Marker', serif",
 };
