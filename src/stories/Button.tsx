@@ -1,48 +1,33 @@
-import React from 'react';
-import './button.css';
+import * as React from 'react';
+import styled from 'styled-components'
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+interface Props {
+	/** What should the button say? */
+	label: string,
+	/** Is being rendered in mobile view? */
+	isMobile: boolean, 
+	/** What should happen when the button is clicked? */
+	onClick: () => void,
+};
+
+const Wrapper = styled.section``
+
+const Controller = styled.button<Pick<Props, 'isMobile'>>`
+	color: white;
+	border-radius: ${props => props.theme.borderRadius};
+	background-color: ${props => props.isMobile ? props.theme.primaryBlue : props.theme.secondaryBlue};
+	border: solid thin white;
+	padding: .75rem;
+	font-weight: 700;
+`
+
+
+export const Button = ({ label, isMobile, onClick }: Props) => {
+
+	return (
+		<Wrapper>
+			<Controller isMobile={isMobile}>{ label }</Controller>
+		</Wrapper>
+	)
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
