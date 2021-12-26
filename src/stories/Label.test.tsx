@@ -5,14 +5,14 @@ import React from 'react';
 import { render } from 'utils/test-utils';
 import { Label } from 'stories/Label';
 
-beforeAll(() => { });
-afterEach(() => { });
-afterAll(() => { });
+beforeAll(() => {});
+afterEach(() => {});
+afterAll(() => {});
 
 describe('Label component unit tests', () => {
-	it('Should render the Label component', () => {
-		const { getByText } = render(<Label text="Label" />);
+  it('Should render the Label component', () => {
+    const { getByText } = render(<Label text="Label" />);
 
-		expect(getByText('Label')).toBeInTheDocument();
-	});
+    expect(getByText('Label')).toBeInTheDocument();
+  });
 });

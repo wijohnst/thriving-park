@@ -7,16 +7,16 @@
  */
 
 export const paddedDiv = {
-	padding: '10px',
+  padding: '10px',
 };
 
 export const centerDiv = {
-	display: 'flex',
-	justifyContent: 'center',
-	alignItems: 'center',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 export const standardWrapper = {
-	...paddedDiv,
-	...centerDiv,
+  ...paddedDiv,
+  ...centerDiv,
 };
