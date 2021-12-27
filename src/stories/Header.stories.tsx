@@ -45,7 +45,6 @@ RegularCasing.args = {
 export const Subheading = Template.bind({});
 Subheading.args = {
   ...Primary.args,
-  hasSubheading: true,
   subheadingText: 'Subheading',
 };
 
