@@ -24,7 +24,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "svg": "svgo --help"
   },
   "browserslist": {
     "production": [
@@ -64,6 +65,7 @@
     "jest-watch-typeahead": "^0.6.5",
     "prettier": "^2.5.1",
     "styled-components": "^5.3.3",
+    "svgo": "^2.8.0",
     "themeprovider-storybook": "^1.8.0",
     "webpack": "^5.65.0"
   }
