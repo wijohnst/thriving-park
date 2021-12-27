@@ -12,10 +12,8 @@ interface Props {
   color?: string;
   /** Should the text be all caps? */
   shouldAllCaps?: boolean;
-  /** Should the heading render a subheading? */
-  hasSubheading?: boolean;
   /** What should the subheading say? */
-  subheadingText?: string;
+  subheadingText?: string | null;
   /** What size should the header be? */
   size?: SizesEnum;
 }
@@ -55,7 +53,6 @@ export const Header = ({
   text,
   color = 'white',
   shouldAllCaps = true,
-  hasSubheading = false,
   subheadingText,
   size = SizesEnum.Large,
 }: Props) => {
@@ -64,7 +61,7 @@ export const Header = ({
       <Text color={color} size={size}>
         {shouldAllCaps ? text.toUpperCase() : text}
       </Text>
-      {hasSubheading && (
+      {subheadingText && (
         <SubheadingText color={color}>
           {shouldAllCaps ? subheadingText?.toUpperCase() : subheadingText}
         </SubheadingText>
