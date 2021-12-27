@@ -64,6 +64,7 @@
     "jest-watch-typeahead": "^0.6.5",
     "prettier": "^2.5.1",
     "styled-components": "^5.3.3",
+    "svgo": "^2.8.0",
     "themeprovider-storybook": "^1.8.0",
     "webpack": "^5.65.0"
   }
