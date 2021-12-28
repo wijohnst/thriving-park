@@ -10,11 +10,14 @@ import 'index.css';
 import App from './App';
 import { store } from './app/store';
 
+const { REACT_APP_AUTH_0_DOMAIN = '', REACT_APP_AUTH_0_CLIENT_ID = '' } =
+  process.env;
+
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-4olqi98q.us.auth0.com"
-      clientId="32l6BPujT1g1wOzHkBf9dSsFaMEuO7lN "
+      domain={REACT_APP_AUTH_0_DOMAIN}
+      clientId={REACT_APP_AUTH_0_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <Provider store={store}>

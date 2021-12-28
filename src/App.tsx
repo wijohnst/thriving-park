@@ -5,9 +5,15 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 // Local Imports
 import { Button } from 'stories/Button';
+import { ProfilePage } from 'stories/ProfilePage';
 
 const App = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
+    useAuth0();
+
+  React.useEffect(() => {
+    console.log(isAuthenticated);
+  }, [isAuthenticated]);
   return (
     <>
       <Router>
@@ -16,6 +22,9 @@ const App = () => {
             <ul>
               <li>
                 <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/profile">Profile</Link>
               </li>
             </ul>
           </nav>
@@ -27,6 +36,17 @@ const App = () => {
               <Button label="Home" isMobile={false} onClick={() => {}} />
             }
           />
+          <Route path="/logout" element={<span>Logged Out</span>} />
+          <Route
+            path="/profile"
+            element={
+              <ProfilePage
+                user={user}
+                isAuthenticated={isAuthenticated}
+                isLoading={isLoading}
+              />
+            }
+          />
         </Routes>
       </Router>
       <Button
@@ -34,6 +54,7 @@ const App = () => {
         isMobile={false}
         onClick={() => loginWithRedirect()}
       />
+      <Button label="Logout" isMobile={false} onClick={() => logout()} />
     </>
   );
 };
