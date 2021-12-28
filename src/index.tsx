@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from 'themes';
@@ -11,11 +12,17 @@ import { store } from './app/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={defaultTheme}>
-        <App />
-      </ThemeProvider>
-    </Provider>
+    <Auth0Provider
+      domain="dev-4olqi98q.us.auth0.com"
+      clientId="32l6BPujT1g1wOzHkBf9dSsFaMEuO7lN "
+      redirectUri={window.location.origin}
+    >
+      <Provider store={store}>
+        <ThemeProvider theme={defaultTheme}>
+          <App />
+        </ThemeProvider>
+      </Provider>
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
