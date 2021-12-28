@@ -1,10 +1,10 @@
+/* eslint-disable global-require */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from 'themes';
-import * as serviceWorker from './serviceWorker';
 
 import 'index.css';
 import App from './App';
@@ -12,6 +12,14 @@ import { store } from './app/store';
 
 const { REACT_APP_AUTH_0_DOMAIN = '', REACT_APP_AUTH_0_CLIENT_ID = '' } =
   process.env;
+
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('mocks/browser');
+  worker.start({
+    onUnhandledRequest: 'bypass',
+    quiet: true,
+  });
+}
 
 ReactDOM.render(
   <React.StrictMode>
@@ -29,8 +37,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
