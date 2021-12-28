@@ -7,7 +7,6 @@ interface Props {
   /** Is being rendered in mobile view? */
   isMobile: boolean;
   /** What should happen when the button is clicked? */
-  // eslint-disable-next-line react/no-unused-prop-types
   onClick: () => void;
 }
 
@@ -23,8 +22,8 @@ const Controller = styled.button<Pick<Props, 'isMobile'>>`
   font-weight: 700;
 `;
 
-export const Button = ({ label, isMobile }: Props) => (
-  <Wrapper>
+export const Button = ({ label, isMobile, onClick: handleClick }: Props) => (
+  <Wrapper onClick={() => handleClick()}>
     <Controller isMobile={isMobile}>{label}</Controller>
   </Wrapper>
 );
