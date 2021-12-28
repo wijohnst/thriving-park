@@ -3,7 +3,7 @@ import * as React from 'react';
 import { User } from '@auth0/auth0-react';
 
 interface Props {
-  user: User;
+  user: User | undefined;
   isAuthenticated: boolean;
   isLoading: boolean;
 }
