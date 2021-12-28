@@ -70,5 +70,8 @@
     "svgo": "^2.8.0",
     "themeprovider-storybook": "^1.8.0",
     "webpack": "^5.65.0"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
