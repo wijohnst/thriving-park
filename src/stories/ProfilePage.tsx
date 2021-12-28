@@ -1,16 +1,19 @@
 // Global Imports
 import * as React from 'react';
-import { User } from '@auth0/auth0-react';
 
-interface Props {
-  user: User | undefined;
-  isAuthenticated: boolean;
-  isLoading: boolean;
-}
+// Local Imports
+import { useAppSelector } from 'app/hooks';
+import { selectSession } from 'features/session/sessionSlice';
+
+interface Props {}
 
 // eslint-disable-next-line no-empty-pattern
-export const ProfilePage = ({ user, isAuthenticated, isLoading }: Props) => {
-  if (isLoading) {
+export const ProfilePage = ({}: Props) => {
+  const { isAuthLoading, isAuthenticated, user } = useAppSelector((state) =>
+    selectSession(state)
+  );
+
+  if (isAuthLoading) {
     return <span>Loading...</span>;
   }
 

@@ -6,14 +6,24 @@ import { useAuth0 } from '@auth0/auth0-react';
 // Local Imports
 import { Button } from 'stories/Button';
 import { ProfilePage } from 'stories/ProfilePage';
+import { useAppDispatch } from 'app/hooks';
+import { startSession } from 'features/session/sessionSlice';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
 
+  const dispatch = useAppDispatch();
+
   React.useEffect(() => {
-    console.log(isAuthenticated);
+    const payload = {
+      isAuthenticated,
+      isAuthLoading: isLoading,
+      user,
+    };
+    dispatch(startSession(payload));
   }, [isAuthenticated]);
+
   return (
     <>
       <Router>
@@ -37,16 +47,7 @@ const App = () => {
             }
           />
           <Route path="/logout" element={<span>Logged Out</span>} />
-          <Route
-            path="/profile"
-            element={
-              <ProfilePage
-                user={user}
-                isAuthenticated={isAuthenticated}
-                isLoading={isLoading}
-              />
-            }
-          />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </Router>
       <Button

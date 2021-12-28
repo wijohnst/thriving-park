@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider as ReduxProvider } from 'react-redux';
 
 import { ProfilePage } from 'stories/ProfilePage';
-import { TestUser } from 'utils/constants';
-// import { defaultTheme } from 'themes';
-// import { standardWrapper } from 'stories/decoratorStyles';
+import { store } from 'app/store';
 
 const { REACT_APP_AUTH_0_DOMAIN = '', REACT_APP_AUTH_0_CLIENT_ID = '' } =
   process.env;
+
 export default {
   title: 'Design System/Pages/ProfilePage',
   component: ProfilePage,
@@ -19,7 +19,9 @@ export default {
         clientId={REACT_APP_AUTH_0_CLIENT_ID}
         redirectUri={window.location.origin}
       >
-        <Story />
+        <ReduxProvider store={store}>
+          <Story />
+        </ReduxProvider>
       </Auth0Provider>
     ),
   ],
@@ -30,21 +32,4 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  isLoading: false,
-  isAuthenticated: true,
-  user: TestUser,
-};
-
-export const Loading = Template.bind({});
-Loading.args = {
-  isLoading: true,
-  isAuthenticated: false,
-  user: undefined,
-};
-
-export const NotLoggedIn = Template.bind({});
-NotLoggedIn.args = {
-  ...Default.args,
-  isAuthenticated: false,
-};
+Default.args = {};
