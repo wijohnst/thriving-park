@@ -5,6 +5,8 @@ import * as React from 'react';
 import { useAppSelector } from 'app/hooks';
 import { selectSession } from 'features/session/sessionSlice';
 import { useGetUserQuery } from 'features/session/sessionApi';
+import { ProfilePic } from 'stories/ProfilePic';
+import { SizesEnum } from 'utils/sharedTypes';
 
 interface Props {}
 
@@ -22,7 +24,7 @@ export const ProfilePage = ({}: Props) => {
   return isAuthenticated && data ? (
     <>
       <span>Welcome {user?.name ?? 'User'}</span>
-      <img src={data.profileURI} alt="profile" />
+      <ProfilePic profilePictureURL={data.profileURI} size={SizesEnum.Medium} />
     </>
   ) : (
     <span>Please Login</span>
