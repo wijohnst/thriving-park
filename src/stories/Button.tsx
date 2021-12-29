@@ -10,7 +10,11 @@ interface Props {
   onClick: () => void;
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  :hover {
+    cursor: pointer;
+  }
+`;
 
 const Controller = styled.button<Pick<Props, 'isMobile'>>`
   color: white;
