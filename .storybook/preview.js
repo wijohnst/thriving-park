@@ -1,6 +1,9 @@
 import { withThemesProvider } from "themeprovider-storybook";
+import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 import { defaultTheme } from '../src/themes'
+
+initialize();
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -16,4 +19,4 @@ const themes = [
 	defaultTheme,
 ]
 
-export const decorators = [withThemesProvider(themes)];
+export const decorators = [withThemesProvider(themes), mswDecorator];

@@ -2,9 +2,29 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { Provider as ReduxProvider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+import { rest } from 'msw';
 
 import { ProfilePage } from 'stories/ProfilePage';
-import { store } from 'app/store';
+import { sessionApi } from 'features/session/sessionApi';
+import sessionReducer from 'features/session/sessionSlice';
+import { TestUser } from 'utils/constants';
+
+const store = configureStore({
+  reducer: {
+    session: sessionReducer,
+    [sessionApi.reducerPath]: sessionApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(sessionApi.middleware),
+  preloadedState: {
+    session: {
+      isAuthenticated: true,
+      isAuthLoading: false,
+      user: TestUser,
+    },
+  },
+});
 
 const { REACT_APP_AUTH_0_DOMAIN = '', REACT_APP_AUTH_0_CLIENT_ID = '' } =
   process.env;
@@ -32,4 +52,18 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.parameters = {
+  msw: {
+    handlers: [
+      rest.get('/user', (req, res, ctx) => {
+        return res(
+          ctx.status(200),
+          ctx.json({
+            profileURI:
+              'https://organicthemes.com/demo/profile/files/2018/05/profile-pic.jpg',
+          })
+        );
+      }),
+    ],
+  },
+};
