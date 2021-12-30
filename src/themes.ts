@@ -15,4 +15,6 @@ export const defaultTheme = {
   // TEXT
   primaryFontFamily: "'Helvetica', sans-serif",
   secondaryFontFamily: "'Permanent Marker', serif",
+  // GRADIENTS
+  primaryGradient: 'linear-gradient(180deg, #007B8C 16.84%, #D6FBAE 90.36%)',
 };
