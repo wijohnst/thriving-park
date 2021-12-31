@@ -5,7 +5,7 @@ export const handlers = [
     return res(
       ctx.status(200),
       ctx.json({
-        profileURI:
+        profilePictureURL:
           'https://organicthemes.com/demo/profile/files/2018/05/profile-pic.jpg',
       })
     );

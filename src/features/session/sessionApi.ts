@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 interface GetUserResponse {
-  profileURI: string;
+  profilePicutreURL: string;
 }
 
 export const sessionApi = createApi({
