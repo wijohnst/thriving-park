@@ -5,7 +5,7 @@ import * as React from 'react';
 import { LayoutWrapper } from 'stories/Layout.style';
 
 interface Props {
-  children: Array<React.ReactElement>;
+  children: Array<React.ReactElement> | React.ReactElement;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars

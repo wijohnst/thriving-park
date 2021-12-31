@@ -8,13 +8,42 @@ import { Button } from 'stories/Button';
 import { ProfilePage } from 'stories/ProfilePage';
 import { useAppDispatch } from 'app/hooks';
 import { startSession } from 'features/session/sessionSlice';
+import { Layout } from 'stories/Layout';
+import {
+  useGetUserByIdQuery,
+  useAddUserMutation,
+} from 'features/session/sessionApi';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
-  //* For unique `user_id`, see `user.sub`
 
   const dispatch = useAppDispatch();
+
+  const {
+    data: userData,
+    isLoading: queryIsLoading,
+    error: getUserError,
+  } = useGetUserByIdQuery(
+    {
+      userId: user?.sub ?? '',
+    },
+    {
+      skip: !user,
+    }
+  );
+
+  console.log(userData, queryIsLoading, getUserError);
+
+  const [addUser] = useAddUserMutation();
+
+  React.useEffect(() => {
+    if (getUserError && user?.sub) {
+      addUser({
+        userId: user?.sub,
+      });
+    }
+  }, [getUserError]);
 
   React.useEffect(() => {
     const payload = {
@@ -26,38 +55,33 @@ const App = () => {
   }, [isAuthenticated]);
 
   return (
-    <>
-      <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/profile">Profile</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <Layout>
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Button label="Home" isMobile={false} onClick={() => {}} />
-            }
-          />
+          <Route path="/" element={<span>Home</span>} />
           <Route path="/logout" element={<span>Logged Out</span>} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage userId={user?.sub} />} />
         </Routes>
-      </Router>
-      <Button
-        label="Login"
-        isMobile={false}
-        onClick={() => loginWithRedirect()}
-      />
-      <Button label="Logout" isMobile={false} onClick={() => logout()} />
-    </>
+        <Button
+          label="Login"
+          isMobile={false}
+          onClick={() => loginWithRedirect()}
+        />
+        <Button label="Logout" isMobile={false} onClick={() => logout()} />
+      </Layout>
+    </Router>
   );
 };
 export default App;
