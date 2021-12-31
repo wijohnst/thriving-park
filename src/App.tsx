@@ -12,6 +12,7 @@ import { startSession } from 'features/session/sessionSlice';
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
+  //* For unique `user_id`, see `user.sub`
 
   const dispatch = useAppDispatch();
 

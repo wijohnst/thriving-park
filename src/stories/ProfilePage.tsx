@@ -27,7 +27,7 @@ export const ProfilePage = ({}: Props) => {
       <TextPicWrapper>
         <span>Welcome {user?.name ?? 'User'}</span>
         <ProfilePic
-          profilePictureURL={data.profileURI}
+          profilePictureURL={data.profilePicutreURL}
           size={SizesEnum.Medium}
         />
       </TextPicWrapper>
