@@ -48,14 +48,14 @@ export default {
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => (
-  <ProfilePage {...args} />
+  <ProfilePage {...args} userId={undefined} />
 );
 
 export const Default = Template.bind({});
 Default.parameters = {
   msw: {
     handlers: [
-      rest.get('/user', (req, res, ctx) => {
+      rest.get('/users', (req, res, ctx) => {
         return res(
           ctx.status(200),
           ctx.json({

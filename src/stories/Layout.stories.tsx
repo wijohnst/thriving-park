@@ -68,5 +68,8 @@ Default.parameters = {
   },
 };
 Default.args = {
-  children: [<Primary isMobile={false} key={0} />, <ProfilePage key={1} />],
+  children: [
+    <Primary isMobile={false} key={0} />,
+    <ProfilePage key={1} userId={undefined} />,
+  ],
 };
