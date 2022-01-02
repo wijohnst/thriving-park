@@ -5,10 +5,16 @@ export const AppLinkWrapper = styled.div<{
 }>`
   font-family: ${(props) => props.theme.primaryFontFamily};
   font-weight: 700;
-  border-bottom: ${(props) => (props.isActive ? 'solid thin black' : 'none')};
-  opacity: ${(props) => (props.isActive ? '100%' : '30%')};
+  border-bottom: ${(props) => (props.isActive ? 'solid 2px black' : 'none')};
+  opacity: ${(props) => (props.isActive ? '100%' : '50%')};
   padding: 0.25rem;
   :hover {
     cursor: pointer;
   }
+`;
+
+export const AppLinkText = styled.span<{
+  isActive: boolean;
+}>`
+  color: ${(props) => (props.isActive ? 'black' : 'white')};
 `;

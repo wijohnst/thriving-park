@@ -3,16 +3,21 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Local Imports
-import { AppLinkWrapper } from 'stories/AppLink.style';
+import { AppLinkWrapper, AppLinkText } from 'stories/AppLink.style';
 
-interface Props {
+export interface AppLinkProps {
   linkPath: string;
   linkText: string;
   isActive: boolean;
 }
+interface Props {
+  appLink: AppLinkProps;
+}
 
 // eslint-disable-next-line no-empty-pattern
-export const AppLink = ({ linkPath, linkText, isActive }: Props) => {
+export const AppLink = ({
+  appLink: { linkPath, linkText, isActive },
+}: Props) => {
   return (
     <AppLinkWrapper isActive={isActive}>
       <NavLink
@@ -22,7 +27,7 @@ export const AppLink = ({ linkPath, linkText, isActive }: Props) => {
           textDecoration: 'none',
         }}
       >
-        {linkText.toUpperCase()}
+        <AppLinkText isActive={isActive}>{linkText.toUpperCase()}</AppLinkText>
       </NavLink>
     </AppLinkWrapper>
   );

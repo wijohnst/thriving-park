@@ -9,12 +9,16 @@ import styled from 'styled-components';
 
 export const GrafHeaderWrapper = styled.div`
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  position: relative;
 `;
 
-export const TextContent = styled.div``;
+export const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+`;
 
 export const IconWrapper = styled.div`
   max-width: 20%;
@@ -23,8 +27,8 @@ export const IconWrapper = styled.div`
 `;
 
 export const GrafWrapper = styled.div`
-  width: 55%;
-  position: relative;
-  top: -6.25rem;
-  left: 1 rem;
+  width: 45%;
+  position: absolute;
+  top: 2rem;
+  left: 0.5rem;
 `;
