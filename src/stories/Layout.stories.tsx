@@ -4,9 +4,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Layout } from 'stories/Layout';
-import { Primary } from 'stories/GrafHeader.stories';
+import { Primary as GrafHeader } from 'stories/GrafHeader.stories';
+import { Default as NavBar } from 'stories/NavBar.stories';
 import { Default as ProfilePage } from 'stories/ProfilePage.stories';
 import sessionReducer from 'features/session/sessionSlice';
 import { sessionApi } from 'features/session/sessionApi';
@@ -42,7 +44,9 @@ export default {
         redierUri={window.location.origin}
       >
         <ReduxProvider store={store}>
-          <Story />
+          <Router>
+            <Story />
+          </Router>
         </ReduxProvider>
       </Auth0Provider>
     ),
@@ -69,7 +73,9 @@ Default.parameters = {
 };
 Default.args = {
   children: [
-    <Primary isMobile={false} key={0} />,
+    <GrafHeader isMobile={false} key={0} />,
+    // @ts-ignore
+    <NavBar appLinks={NavBar.args?.appLinks} />,
     <ProfilePage key={1} userId={undefined} />,
   ],
 };

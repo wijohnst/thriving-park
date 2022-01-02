@@ -11,4 +11,5 @@ export const LayoutWrapper = styled.div`
   flex-flow: column nowrap;
   background: ${(props) => props.theme.primaryGradient};
   height: 100vh;
+  align-items: center;
 `;
