@@ -1,64 +1,54 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true,
-				"jest": true
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb",
-				"plugin:import/errors",
-				"plugin:import/warnings",
-				"plugin:prettier/recommended"
-    ],
-		"settings": {
-			"import/resolver":{
-				"typescript":{
-					"project": "."
-				}
-			}
-		},
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-		// "overrides": [
-		// 	{
-		// 		"files":[
-		// 			"**/*.spec.tsx"
-		// 		]
-		// 	}
-		// ],
-    "rules": {
-			"import/no-anonymous-default-export": "off",
-			"react/jsx-indent": "off",
-			"import/no-extraneous-dependencies": "off",
-			"no-tabs": "off",
-			"indent": "off",
-			"react/jsx-filename-extension": "off",
-			"react/jsx-closing-bracket-location": "off",
-			"react/function-component-definition": "off",
-			"import/extensions": "off",
-			"react/jsx-props-no-spreading": "off",
-			"import/prefer-default-export": "off",
-			"react/require-default-props": "off",
-			"prettier/prettier":[
-				"error",
-				{
-					"singleQuote": true
-				}
-			],
-			"no-shadow": "off",
-			"@typescript-eslint/no-shadow": ["error"],
-			"no-unused-vars": "off",
-			"@typescript-eslint/no-unused-vars": ["error"]
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "."
+      }
     }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "react/jsx-indent": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-tabs": "off",
+    "indent": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/function-component-definition": "off",
+    "import/extensions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true
+      }
+    ],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
+  }
 }
