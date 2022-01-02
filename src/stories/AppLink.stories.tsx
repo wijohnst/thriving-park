@@ -31,13 +31,18 @@ const Template: ComponentStory<typeof AppLink> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  linkPath: '/',
-  linkText: 'Home',
-  isActive: false,
+  appLink: {
+    linkPath: '/',
+    linkText: 'Home',
+    isActive: false,
+  },
 };
 
 export const Active = Template.bind({});
 Active.args = {
-  ...Default.args,
-  isActive: true,
+  // @ts-ignore - Partial type not recognized by Storybook
+  appLink: {
+    ...Default.args.appLink,
+    isActive: true,
+  },
 };
