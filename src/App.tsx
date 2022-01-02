@@ -1,6 +1,6 @@
 // Global Imports
 import * as React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // Local Imports
@@ -13,6 +13,9 @@ import {
   useGetUserByIdQuery,
   useAddUserMutation,
 } from 'features/session/sessionApi';
+import { GrafHeader } from 'stories/GrafHeader';
+import { NavBar } from 'stories/NavBar';
+import { NavLinks } from 'utils/constants';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -21,8 +24,8 @@ const App = () => {
   const dispatch = useAppDispatch();
 
   const {
-    data: userData,
-    isLoading: queryIsLoading,
+    // data: userData,
+    // isLoading: queryIsLoading,
     error: getUserError,
   } = useGetUserByIdQuery(
     {
@@ -32,8 +35,6 @@ const App = () => {
       skip: !user,
     }
   );
-
-  console.log(userData, queryIsLoading, getUserError);
 
   const [addUser] = useAddUserMutation();
 
@@ -56,19 +57,9 @@ const App = () => {
 
   return (
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
       <Layout>
+        <GrafHeader isMobile={false} />
+        <NavBar appLinks={NavLinks} />
         <Routes>
           <Route path="/" element={<span>Home</span>} />
           <Route path="/logout" element={<span>Logged Out</span>} />
