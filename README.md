@@ -21,3 +21,6 @@ npm run storybook
 npm run test
 
 ```
+
+## Designs
+Designs are housed in Figma [here](https://www.figma.com/file/6KMRJe1Pm5HI5vOcEOApAs/ThrivingPark.com?node-id=1%3A5). For edit access please message `@wijohnst`. 
