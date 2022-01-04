@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // Local Imports
 import { InputWrapper } from 'stories/Input.style';
-import { TextInput } from 'stories/Inputs/Text/TextInput';
+import { TextInput } from 'stories/Inputs';
 
 export type InputType = 'Text' | 'Select';
 
