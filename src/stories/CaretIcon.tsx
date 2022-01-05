@@ -22,7 +22,11 @@ export const CaretIcon = ({
   onClick,
 }: Props) => {
   return (
-    <CaretIconWrapper orientation={orientation} onClick={onClick}>
+    <CaretIconWrapper
+      orientation={orientation}
+      onClick={onClick}
+      data-testid="caret-icon"
+    >
       <SvgContainer height={height} width={width}>
         <CaretSvg />
       </SvgContainer>

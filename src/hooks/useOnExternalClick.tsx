@@ -4,15 +4,16 @@ import * as React from 'react';
 type Event = MouseEvent | TouchEvent;
 
 export const useOnExternalClick = <T extends HTMLElement = HTMLElement>(
-  // refs: Array<React.RefObject<T>>,
   ref: React.RefObject<T>,
-  eventHandlerCallback: (event: Event) => void
+  eventHandlerCallback: () => void
 ) => {
   React.useEffect(() => {
     const handleEvent = (event: Event) => {
-      if (ref.current === event.target) {
-        eventHandlerCallback(event);
+      const element = ref?.current;
+      if (!element || element.contains((event?.target as Node) || null)) {
+        return;
       }
+      eventHandlerCallback();
     };
 
     window.addEventListener('mousedown', handleEvent);
