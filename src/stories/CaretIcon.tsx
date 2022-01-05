@@ -12,11 +12,17 @@ interface Props {
   orientation: Orientation;
   height?: number;
   width?: number;
+  onClick?: () => void;
 }
 
-export const CaretIcon = ({ orientation = 'Down', height, width }: Props) => {
+export const CaretIcon = ({
+  orientation = 'Down',
+  height,
+  width,
+  onClick,
+}: Props) => {
   return (
-    <CaretIconWrapper orientation={orientation}>
+    <CaretIconWrapper orientation={orientation} onClick={onClick}>
       <SvgContainer height={height} width={width}>
         <CaretSvg />
       </SvgContainer>

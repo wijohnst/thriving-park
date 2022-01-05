@@ -3,6 +3,7 @@ import * as React from 'react';
 
 // Local Imports
 import { OptionWrapper } from 'stories/Inputs/Select/Option/Option.style';
+import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 
 export interface OptionInfo {
   key: number | string;
@@ -14,14 +15,14 @@ interface Props {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Option = ({ option: { key, label, value } }: Props) => {
+export const Option = ({ option }: Props) => {
+  const { updateSelectedOption } = React.useContext(SelectContext);
   return (
-    <OptionWrapper key={key} onClick={() => console.log(value)}>
-      {label}
+    <OptionWrapper
+      key={option.key}
+      onClick={() => updateSelectedOption(option)}
+    >
+      {option.label}
     </OptionWrapper>
   );
 };
-
-// TODO: Refactor `onClick` callback to pass value to context
-
-// TODO: Refactor background color to conditionally render as theme.brightGreen when `Select` value equals value (eg: on select, the selected option should stay green)

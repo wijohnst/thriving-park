@@ -22,7 +22,7 @@ export default {
   ],
 } as ComponentMeta<typeof OptionList>;
 
-const defaultOptions = [
+export const defaultOptions = [
   {
     key: 1,
     label: 'Option 1',
