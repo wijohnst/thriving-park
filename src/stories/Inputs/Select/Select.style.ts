@@ -12,11 +12,20 @@ export const SelectWrapper = styled.div<{
   display: flex;
   flex-direction: column;
   margin: 0.25rem;
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  width: 100%;
 `;
 
 export const SelectHeader = styled.div`
   display: flex;
   align-items: center;
+  flex-grow: 1;
+`;
+
+export const IconWrapper = styled.div`
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
 `;
 
 export const Placeholder = styled.span`
