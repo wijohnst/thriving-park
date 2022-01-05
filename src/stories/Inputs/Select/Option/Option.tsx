@@ -4,7 +4,7 @@ import * as React from 'react';
 // Local Imports
 import { OptionWrapper } from 'stories/Inputs/Select/Option/Option.style';
 
-interface OptionInfo {
+export interface OptionInfo {
   key: number | string;
   label: string;
   value: number | string | boolean;
@@ -21,3 +21,7 @@ export const Option = ({ option: { key, label, value } }: Props) => {
     </OptionWrapper>
   );
 };
+
+// TODO: Refactor `onClick` callback to pass value to context
+
+// TODO: Refactor background color to conditionally render as theme.brightGreen when `Select` value equals value (eg: on select, the selected option should stay green)
