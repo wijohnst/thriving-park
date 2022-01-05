@@ -26,3 +26,9 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const CustomPlaceholder = Template.bind({});
+CustomPlaceholder.args = {
+  ...Default.args,
+  placeholder: 'Custom Placeholder',
+};

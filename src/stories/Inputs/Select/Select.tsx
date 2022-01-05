@@ -22,8 +22,6 @@ interface Props {
 
 export const Select = ({ placeholder = 'Please select an option' }: Props) => {
   const selectRef = React.useRef<HTMLDivElement>(null);
-  // const spanRef = React.useRef<HTMLElement>(null);
-  // const headerRef = React.useRef<HTMLDivElement>(null);
   const [selectValue, setSelectValue] = React.useState<OptionInfo | undefined>(
     undefined
   );
@@ -36,12 +34,16 @@ export const Select = ({ placeholder = 'Please select an option' }: Props) => {
     setIsSelectOpen(!isSelectOpen);
   };
 
+  const handleExternalClick = () => {
+    setIsSelectOpen(false);
+  };
+
   const updateSelectValue = (option: OptionInfo) => {
     setIsSelectOpen(false);
     setSelectValue(option);
   };
 
-  useOnExternalClick(selectRef, handleClick);
+  useOnExternalClick(selectRef, handleExternalClick);
 
   const value = React.useMemo(
     () => ({
@@ -53,7 +55,12 @@ export const Select = ({ placeholder = 'Please select an option' }: Props) => {
 
   return (
     <SelectContext.Provider value={value}>
-      <SelectWrapper ref={selectRef}>
+      <SelectWrapper
+        ref={selectRef}
+        onClick={handleClick}
+        onMouseEnter={!selectValue ? handleClick : () => {}}
+        onMouseLeave={!selectValue ? handleExternalClick : () => {}}
+      >
         <SelectHeader>
           {selectValue ? (
             <span>{selectValue.label}</span>
