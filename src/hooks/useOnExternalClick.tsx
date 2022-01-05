@@ -4,12 +4,13 @@ import * as React from 'react';
 type Event = MouseEvent | TouchEvent;
 
 export const useOnExternalClick = <T extends HTMLElement = HTMLElement>(
-  ref: React.RefObject<T>,
+  refs: Array<React.RefObject<T>>,
   eventHandlerCallback: (event: Event) => void
 ) => {
   React.useEffect(() => {
     const handleEvent = (event: Event) => {
-      if (ref.current === event.target) {
+      const currentRefs = refs.map((ref) => ref.current);
+      if (currentRefs.some((ref) => ref === event.target)) {
         eventHandlerCallback(event);
       }
     };

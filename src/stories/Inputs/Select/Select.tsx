@@ -3,21 +3,72 @@ import React from 'react';
 
 // Local Imports
 import { useOnExternalClick } from 'hooks/useOnExternalClick';
-import { Button } from 'stories/Button';
+import {
+  SelectWrapper,
+  SelectHeader,
+  OptionListWrapper,
+  Placeholder,
+} from 'stories/Inputs/Select/Select.style';
+import { OptionList } from 'stories/Inputs/Select/OptionList/OptionList';
+import { defaultOptions as optionsStub } from 'stories/Inputs/Select/OptionList/OptionList.stories';
+import { CaretIcon } from 'stories/CaretIcon';
+import { SelectContext } from 'stories/Inputs/Select/SelectContext';
+import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
 
-interface Props {}
+interface Props {
+  placeholder?: string;
+}
 
-const handleClick = () => {
-  console.log('Select element clicked...');
-};
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const Select = (props: Props) => {
+export const Select = ({ placeholder = 'Please select an option' }: Props) => {
+  const selectRef = React.useRef<HTMLDivElement>(null);
   const spanRef = React.useRef<HTMLElement>(null);
-  useOnExternalClick(spanRef, handleClick);
+  const headerRef = React.useRef<HTMLDivElement>(null);
+  const [selectValue, setSelectValue] = React.useState<OptionInfo | undefined>(
+    undefined
+  );
+  const [isSelectOpen, setIsSelectOpen] = React.useState(false);
+
+  /**
+   * Event handler for Select click events
+   */
+  const handleClick = () => {
+    setIsSelectOpen(!isSelectOpen);
+  };
+
+  const updateSelectValue = (option: OptionInfo) => {
+    setIsSelectOpen(false);
+    setSelectValue(option);
+  };
+
+  useOnExternalClick([selectRef, spanRef], handleClick);
+
+  const value = React.useMemo(
+    () => ({
+      selectedOption: selectValue,
+      updateSelectedOption: updateSelectValue,
+    }),
+    [selectValue, setSelectValue]
+  );
   return (
-    <div>
-      <Button label="Button" />
-      <span ref={spanRef}>Select Works!</span>
-    </div>
+    <SelectContext.Provider value={value}>
+      <SelectWrapper ref={selectRef}>
+        <SelectHeader ref={headerRef}>
+          {selectValue ? (
+            <span>{selectValue.label}</span>
+          ) : (
+            <Placeholder ref={spanRef}>{placeholder}</Placeholder>
+          )}
+
+          <CaretIcon
+            orientation={isSelectOpen ? 'Down' : 'Up'}
+            height={24}
+            onClick={handleClick}
+          />
+        </SelectHeader>
+        <OptionListWrapper isSelectOpen={isSelectOpen}>
+          <OptionList options={optionsStub} />
+        </OptionListWrapper>
+      </SelectWrapper>
+    </SelectContext.Provider>
   );
 };
