@@ -5,9 +5,9 @@ interface Props {
   /** What should the button say? */
   label: string;
   /** Is being rendered in mobile view? */
-  isMobile: boolean;
+  isMobile?: boolean;
   /** What should happen when the button is clicked? */
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 const Wrapper = styled.section`
@@ -26,7 +26,11 @@ const Controller = styled.button<Pick<Props, 'isMobile'>>`
   font-weight: 700;
 `;
 
-export const Button = ({ label, isMobile, onClick: handleClick }: Props) => (
+export const Button = ({
+  label,
+  isMobile = false,
+  onClick: handleClick = () => console.log('Click!'),
+}: Props) => (
   <Wrapper onClick={() => handleClick()}>
     <Controller isMobile={isMobile}>{label}</Controller>
   </Wrapper>

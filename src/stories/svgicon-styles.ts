@@ -7,8 +7,12 @@ export const SvgContainer = styled.div<{
   height: 'auto';
   width: 'auto';
   display: 'inline-flex';
-  align-itmes: 'center';
+  align-items: 'center';
   justify-content: 'center';
+
+  :hover {
+    cursor: pointer;
+  }
 
   & svg {
     height: ${(props) => (props.height ? `${props.height}px` : '100%')};

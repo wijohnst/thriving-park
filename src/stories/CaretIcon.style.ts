@@ -12,4 +12,6 @@ export const CaretIconWrapper = styled.div<{
   orientation: Orientation;
 }>`
   transform: ${(props) => transforms[props.orientation]};
+  transition: all 0.25s;
+  margin: 0 0 0 1rem;
 `;
