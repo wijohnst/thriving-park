@@ -15,6 +15,8 @@ import { defaultOptions as optionsStub } from 'stories/Inputs/Select/OptionList/
 import { CaretIcon } from 'stories/CaretIcon';
 import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
+import { Icon } from 'stories/Icon';
+import { ReactComponent as CloseIcon } from 'stories/assets/ex_icon.svg';
 
 interface Props {
   placeholder?: string;
@@ -76,11 +78,19 @@ export const Select = ({ placeholder = 'Please select an option' }: Props) => {
             <Placeholder>{placeholder}</Placeholder>
           )}
           <IconWrapper>
-            <CaretIcon
-              orientation={isSelectOpen ? 'Down' : 'Up'}
-              height={24}
-              onClick={handleClick}
-            />
+            {selectValue ? (
+              <Icon
+                icon={<CloseIcon />}
+                onClick={() => setSelectValue(undefined)}
+                height={24}
+              />
+            ) : (
+              <CaretIcon
+                orientation={isSelectOpen ? 'Down' : 'Up'}
+                height={24}
+                onClick={handleClick}
+              />
+            )}
           </IconWrapper>
         </SelectHeader>
         <OptionListWrapper isSelectOpen={isSelectOpen}>

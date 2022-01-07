@@ -4,6 +4,7 @@ import * as React from 'react';
 // Local Imports
 import { SvgContainer } from 'stories/svgicon-styles';
 import { ReactComponent as DefaultIcon } from 'stories/assets/info_icon.svg';
+import { IconWrapper } from 'stories/Icon.style';
 
 interface Props {
   icon: React.ReactElement;
@@ -20,8 +21,10 @@ export const Icon = ({
   onClick,
 }: Props) => {
   return (
-    <SvgContainer height={height} width={width} onClick={onClick}>
-      {PassedIcon || <DefaultIcon data-testid="default-icon" />}
-    </SvgContainer>
+    <IconWrapper>
+      <SvgContainer height={height} width={width} onClick={onClick}>
+        {PassedIcon || <DefaultIcon data-testid="default-icon" />}
+      </SvgContainer>
+    </IconWrapper>
   );
 };
