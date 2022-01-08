@@ -32,3 +32,20 @@ CustomPlaceholder.args = {
   ...Default.args,
   placeholder: 'Custom Placeholder',
 };
+
+export const WithPassedOptions = Template.bind({});
+WithPassedOptions.args = {
+  ...Default.args,
+  options: [
+    {
+      key: 1,
+      label: 'Custom Option 1',
+      value: 1,
+    },
+    {
+      key: 2,
+      label: 'Custom Option 2',
+      value: 2,
+    },
+  ],
+};

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-type DisplayStyles = 'flexCenter' | 'flexRight' | 'flexLeft';
+export type DisplayStyles = 'flexCenter' | 'flexRight' | 'flexLeft';
 
 interface DisplayStyle {
   justifyContent: string;

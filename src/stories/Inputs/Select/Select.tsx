@@ -11,7 +11,7 @@ import {
   IconWrapper,
 } from 'stories/Inputs/Select/Select.style';
 import { OptionList } from 'stories/Inputs/Select/OptionList/OptionList';
-import { defaultOptions as optionsStub } from 'stories/Inputs/Select/OptionList/OptionList.stories';
+import { defaultOptions } from 'stories/Inputs/Select/OptionList/OptionList.stories';
 import { CaretIcon } from 'stories/CaretIcon';
 import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
@@ -20,9 +20,13 @@ import { ReactComponent as CloseIcon } from 'stories/assets/ex_icon.svg';
 
 interface Props {
   placeholder?: string;
+  options?: Array<OptionInfo>;
 }
 
-export const Select = ({ placeholder = 'Please select an option' }: Props) => {
+export const Select = ({
+  placeholder = 'Please select an option',
+  options = defaultOptions,
+}: Props) => {
   const selectRef = React.useRef<HTMLDivElement>(null);
   const [selectValue, setSelectValue] = React.useState<OptionInfo | undefined>(
     undefined
@@ -94,7 +98,7 @@ export const Select = ({ placeholder = 'Please select an option' }: Props) => {
           </IconWrapper>
         </SelectHeader>
         <OptionListWrapper isSelectOpen={isSelectOpen}>
-          <OptionList options={optionsStub} />
+          <OptionList options={options} />
         </OptionListWrapper>
       </SelectWrapper>
     </SelectContext.Provider>

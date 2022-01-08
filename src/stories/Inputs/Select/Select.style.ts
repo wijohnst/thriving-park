@@ -8,7 +8,7 @@ export const SelectWrapper = styled.div<{
   font-family: ${(props) => props.theme.primaryFontFamily};
   border: ${(props) => `solid thin ${props.theme.primaryGray}`};
   border-radius: 5px;
-  padding: 0 0.5rem 0 1rem;
+  padding: 0 0.5rem 0 0.5rem;
   display: flex;
   flex-direction: column;
   margin: 0.25rem;
