@@ -7,20 +7,25 @@ import {
   LabelWrapper,
   InputWrapper,
 } from 'stories/InputContainer.style';
-import { Label } from 'stories/Label';
+import { Label, DisplayStyles } from 'stories/Label';
 import { Input, InputType } from 'stories/Input';
 
 interface Props {
   label: string;
   inputType: InputType;
+  labelDisplayStyle: DisplayStyles;
 }
 
 // eslint-disable-next-line no-empty-pattern
-export const InputContainer = ({ label, inputType }: Props) => {
+export const InputContainer = ({
+  label,
+  inputType,
+  labelDisplayStyle = 'flexLeft',
+}: Props) => {
   return (
     <InputContainerWrapper>
       <LabelWrapper>
-        <Label text={label} />
+        <Label text={label} displayStyle={labelDisplayStyle} />
       </LabelWrapper>
       <InputWrapper>
         <Input inputType={inputType} />

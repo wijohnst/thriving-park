@@ -33,3 +33,21 @@ Default.args = {
   label: 'Label',
   inputType: 'Text',
 };
+
+export const Select = Template.bind({});
+Select.args = {
+  ...Default.args,
+  inputType: 'Select',
+};
+
+export const RightLabel = Template.bind({});
+RightLabel.args = {
+  ...Default.args,
+  labelDisplayStyle: 'flexRight',
+};
+
+export const CenterLabel = Template.bind({});
+CenterLabel.args = {
+  ...Default.args,
+  labelDisplayStyle: 'flexCenter',
+};
