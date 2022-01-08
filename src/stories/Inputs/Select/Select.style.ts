@@ -12,8 +12,8 @@ export const SelectWrapper = styled.div<{
   display: flex;
   flex-direction: column;
   margin: 0.25rem;
-  /* background-color: rgba(255, 255, 255, 0.75); */
-  width: 100%;
+  background-color: rgb(255, 255, 255);
+  /* width: 100%; */
 `;
 
 export const SelectHeader = styled.div`

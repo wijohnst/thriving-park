@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // Local Imports
 import { InputWrapper } from 'stories/Input.style';
-import { TextInput } from 'stories/Inputs';
+import { TextInput, SelectInput } from 'stories/Inputs';
 
 export type InputType = 'Text' | 'Select';
 
@@ -16,7 +16,7 @@ const renderInputByType = (inputType: InputType, isActive: boolean) => {
     case 'Text':
       return <TextInput isActive={isActive} />;
     case 'Select':
-      return <span>Select</span>;
+      return <SelectInput />;
     default:
       return <TextInput />;
   }
