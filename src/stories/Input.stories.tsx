@@ -38,3 +38,9 @@ Select.args = {
   ...Default.args,
   inputType: 'Select',
 };
+
+export const TextArea = Template.bind({});
+TextArea.args = {
+  ...Default.args,
+  inputType: 'TextArea',
+};

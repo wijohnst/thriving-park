@@ -8,7 +8,8 @@ import {
   InputWrapper,
 } from 'stories/InputContainer.style';
 import { Label, DisplayStyles } from 'stories/Label';
-import { Input, InputType } from 'stories/Input';
+import { Input } from 'stories/Input';
+import { InputType } from 'utils/sharedTypes';
 
 interface Props {
   label: string;

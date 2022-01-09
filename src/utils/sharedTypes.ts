@@ -3,3 +3,5 @@ export enum SizesEnum {
   Medium,
   Large,
 }
+
+export type InputType = 'Text' | 'Select' | 'TextArea';
