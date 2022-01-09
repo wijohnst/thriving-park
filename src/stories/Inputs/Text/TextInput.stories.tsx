@@ -34,3 +34,9 @@ Active.args = {
   ...Default.args,
   isActive: true,
 };
+
+export const Placeholder = Template.bind({});
+Placeholder.args = {
+  ...Default.args,
+  placeholder: 'Placeholder...',
+};

@@ -15,4 +15,8 @@ export const InputElement = styled.input<{
 	margin: 0.25rem;
 	box-sizing: border-box;
 	width: 100%;
+
+	::placeholder{
+		font-style: italic;
+	}
 `;
