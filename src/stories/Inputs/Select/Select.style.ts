@@ -29,8 +29,10 @@ export const IconWrapper = styled.div`
 `;
 
 export const Placeholder = styled.span`
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
+  color: ${(props) => props.theme.secondaryGray};
+  font-size: 0.85rem;
 `;
 
 export const OptionListWrapper = styled.div<{

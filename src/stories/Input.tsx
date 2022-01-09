@@ -24,7 +24,7 @@ interface Props {
 const renderInputByType = (
   inputType: InputType,
   isActive: boolean,
-  placeholder: string,
+  placeholder: string | undefined,
   options?: Array<OptionInfo>,
   rows?: Rows,
   maxCharacterLength?: number
@@ -50,7 +50,7 @@ const renderInputByType = (
 
 export const Input = ({
   inputType = 'Text',
-  placeholder = '',
+  placeholder,
   options,
   rows,
   maxCharacterLength,

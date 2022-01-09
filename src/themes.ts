@@ -11,6 +11,7 @@ export const defaultTheme = {
   secondaryBlue: '#2B2D42',
   brightGreen: '#ABFF4F',
   primaryGray: '#E5E5E5',
+  secondaryGray: '#777777',
   // BORDER
   borderRadius: '5px 5px 5px 5px',
   // TEXT
