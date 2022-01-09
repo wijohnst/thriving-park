@@ -3,9 +3,8 @@ import * as React from 'react';
 
 // Local Imports
 import { InputWrapper } from 'stories/Input.style';
-import { TextInput, SelectInput } from 'stories/Inputs';
-
-export type InputType = 'Text' | 'Select';
+import { InputType } from 'utils/sharedTypes';
+import { TextInput, SelectInput, TextAreaInput } from 'stories/Inputs';
 
 interface Props {
   inputType: InputType;
@@ -17,6 +16,8 @@ const renderInputByType = (inputType: InputType, isActive: boolean) => {
       return <TextInput isActive={isActive} />;
     case 'Select':
       return <SelectInput />;
+    case 'TextArea':
+      return <TextAreaInput isActive={isActive} />;
     default:
       return <TextInput />;
   }
