@@ -8,7 +8,7 @@ import {
   CharacterCount,
 } from 'stories/Inputs/TextArea/TextArea.style';
 
-type Rows = 3 | 4 | 5;
+export type Rows = 3 | 4 | 5;
 
 interface Props {
   isActive: boolean;
