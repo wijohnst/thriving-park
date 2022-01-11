@@ -14,7 +14,7 @@ export const NavBar = ({ appLinks }: Props) => {
   return (
     <NavBarWrapper>
       {appLinks.map((appLink) => (
-        <AppLink appLink={appLink} />
+        <AppLink appLink={appLink} key={`navBar-${appLink.linkText}`} />
       ))}
     </NavBarWrapper>
   );
