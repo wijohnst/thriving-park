@@ -2,12 +2,14 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { sessionApi } from 'features/session/sessionApi';
 import sessionReducer from 'features/session/sessionSlice';
+import presentationReducer from 'features/presentation/presentationSlice';
 import counterReducer from '../features/counter/counterSlice';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     session: sessionReducer,
+    presentation: presentationReducer,
     [sessionApi.reducerPath]: sessionApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>

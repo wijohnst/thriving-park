@@ -5,3 +5,5 @@ export enum SizesEnum {
 }
 
 export type InputType = 'Text' | 'Select' | 'TextArea';
+
+export type ScreenSize = 'Desktop' | 'Tablet' | 'Mobile';
