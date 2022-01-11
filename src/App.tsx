@@ -16,12 +16,15 @@ import {
 import { GrafHeader } from 'stories/GrafHeader';
 import { NavBar } from 'stories/NavBar';
 import { NavLinks } from 'utils/constants';
+import useViewInit from 'hooks/useViewInit';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
 
   const dispatch = useAppDispatch();
+
+  useViewInit();
 
   const {
     // data: userData,

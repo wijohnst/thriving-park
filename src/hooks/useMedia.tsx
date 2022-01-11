@@ -1,6 +1,7 @@
 // Global Imports
 import * as React from 'react';
 
+// eslint-disable-next-line func-names
 const useMedia = function <T>(queries: string[], values: T[], defaultValue: T) {
   // Array containing a media query list for each query
   const mediaQueryLists = queries.map((q) => window.matchMedia(q));
