@@ -19,7 +19,7 @@ export const Icon = ({
   height = 24,
   width = 24,
   onClick,
-}: Props) => {
+}: Props): React.ReactElement => {
   return (
     <IconWrapper>
       <SvgContainer height={height} width={width} onClick={onClick}>
