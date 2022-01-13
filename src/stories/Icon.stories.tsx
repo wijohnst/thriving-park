@@ -6,6 +6,7 @@ import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 import { ReactComponent as CaretIcon } from 'stories/assets/caret_icon.svg';
 import { ReactComponent as XIcon } from 'stories/assets/ex_icon.svg';
+import { ReactComponent as Plus } from 'stories/assets/plus_icon.svg';
 
 export default {
   title: 'Design System/Atoms/Icon',
@@ -52,4 +53,10 @@ export const CloseIcon = Template.bind({});
 CloseIcon.args = {
   ...Default.args,
   icon: <XIcon />,
+};
+
+export const PlusIcon = Template.bind({});
+PlusIcon.args = {
+  ...Default.args,
+  icon: <Plus />,
 };
