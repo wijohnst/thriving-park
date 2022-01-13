@@ -38,7 +38,7 @@ const sizePropsMap: { [key: number]: SizeProps } = {
 export const EditPic = ({ children, icon, size }: Props) => {
   const sizeProps: SizeProps = sizePropsMap[size];
   return (
-    <EditPicWrapper>
+    <EditPicWrapper data-testid="editpic-wrapper">
       {children}
       <IconWrapper top={sizeProps.top} right={sizeProps.right}>
         {icon}

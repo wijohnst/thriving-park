@@ -12,6 +12,7 @@ export const defaultTheme = {
   brightGreen: '#ABFF4F',
   primaryGray: '#E5E5E5',
   secondaryGray: '#777777',
+  bightPurple: '#7B61FF',
   // BORDER
   borderRadius: '5px 5px 5px 5px',
   // TEXT
@@ -21,4 +22,6 @@ export const defaultTheme = {
   primaryGradient: 'linear-gradient(180deg, #007B8C 16.84%, #D6FBAE 90.36%)',
   // BACKGROUNDS
   grayTransparent: 'rgba(196,196,196,0.1)',
+  // SHADOWS
+  primaryShadow: '0px 4px 4px rgba(0,0,0,0.25)',
 };

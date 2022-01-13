@@ -10,7 +10,7 @@ const { Default } = composeStories(stories);
 
 describe('EditPic unit tests', () => {
   it('Should render the EditPic component', () => {
-    const { getByText } = render(<Default />);
-    expect(getByText('EditPic works!'));
+    const { getByTestId } = render(<Default />);
+    expect(getByTestId('editpic-wrapper')).toBeInTheDocument();
   });
 });
