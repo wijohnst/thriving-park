@@ -1,24 +1,53 @@
 // Global Imports
-import React from 'react';
+import * as React from 'react';
 
 // Local Imports
-import { IconLabelWrapper } from 'stories/molecules/IconLabel/IconLabel.style';
+import {
+  IconLabelWrapper,
+  IconWrapper,
+} from 'stories/molecules/IconLabel/IconLabel.style';
 import { Label } from 'stories/Label';
 import { Icon } from 'stories/Icon';
-import { ReactComponent as InfoIcon } from 'stories/assets/info_icon.svg';
+import { ReactComponent as EditIcon } from 'stories/assets/edit_icon.svg';
 
+export type Icons = 'edit' | 'add';
 interface Props {
+  iconString: Icons;
   text: string;
-  iconColor?: string;
   onClick: () => void;
+  iconColor?: string;
 }
 
+const getIconByString = (
+  icon: string,
+  iconColor?: string
+): React.ReactElement => {
+  switch (icon) {
+    case 'edit':
+      return <EditIcon fill={iconColor} />;
+    default:
+      return <EditIcon fill={iconColor} />;
+  }
+};
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const IconLabel = ({ text, iconColor = 'black', onClick }: Props) => {
+export const IconLabel = ({
+  iconString = 'edit',
+  text,
+  onClick,
+  iconColor,
+}: Props) => {
   return (
     <IconLabelWrapper>
-      <Label text={text} displayStyle="flexLeft" />
-      <Icon icon={<InfoIcon fill={iconColor} />} onClick={onClick} />
+      <Label text={text} />
+      <IconWrapper>
+        <Icon
+          icon={getIconByString(iconString, iconColor)}
+          onClick={onClick}
+          height={16}
+          width={16}
+        />
+      </IconWrapper>
     </IconLabelWrapper>
   );
 };

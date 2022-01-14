@@ -3,13 +3,13 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
-import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
+import { Display } from 'stories/pages/ProfilePageRender/Display/Display';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 
 export default {
-  title: 'Design System/ Molecules/IconLabel',
-  component: IconLabel,
+  title: 'Design System/Pages/ProfilePageRender/Display',
+  component: Display,
   decorators: [
     (Story) => (
       <div
@@ -22,22 +22,22 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof IconLabel>;
+} as ComponentMeta<typeof Display>;
 
-const Template: ComponentStory<typeof IconLabel> = (args) => (
-  <IconLabel {...args} />
+const Template: ComponentStory<typeof Display> = (args) => (
+  <Display {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  iconString: 'edit',
-  text: 'Label',
+  userName: 'Will Johnston',
   // eslint-disable-next-line no-console
-  onClick: () => console.log('Click'),
+  onClick: () => console.log('Handle edit click'),
 };
 
-export const WithColor = Template.bind({});
-WithColor.args = {
+export const WithPicture = Template.bind({});
+WithPicture.args = {
   ...Default.args,
-  iconColor: defaultTheme.brightGreen,
+  profilePictureURL:
+    'https://organicthemes.com/demo/profile/files/2018/05/profile-pic.jpg',
 };
