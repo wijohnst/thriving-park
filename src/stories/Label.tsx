@@ -1,15 +1,18 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+// Local Imports
+import { TextStyles } from 'utils/sharedTypes';
+
 export type DisplayStyles = 'flexCenter' | 'flexRight' | 'flexLeft';
 
 interface DisplayStyle {
   justifyContent: string;
   alignItems: string;
 }
-
 interface Props {
   text: string;
+  textStyle?: TextStyles;
   displayStyle?: DisplayStyles;
   isUnderlined?: boolean;
 }
@@ -42,19 +45,22 @@ const Wrapper = styled.div<Pick<Props, 'displayStyle'>>`
       : displayStyles.flexLeft.alignItems};
 `;
 
-const Element = styled.label<Pick<Props, 'isUnderlined'>>`
+const Element = styled.label<Pick<Props, 'isUnderlined' | 'textStyle'>>`
   font-family: ${(props) => props.theme.primaryFontFamily};
-  font-weight: 700;
+  font-weight: ${(props) => (props.textStyle === 'bold' ? 700 : 300)};
   letter-spacing: 0.05rem;
   border-bottom: ${(props) => (props.isUnderlined ? '.01rem solid black' : '')};
 `;
 
 export const Label = ({
   text,
+  textStyle = 'bold',
   displayStyle = 'flexLeft',
   isUnderlined = false,
 }: Props) => (
   <Wrapper displayStyle={displayStyle}>
-    <Element isUnderlined={isUnderlined}>{text}</Element>
+    <Element textStyle={textStyle} isUnderlined={isUnderlined}>
+      {text}
+    </Element>
   </Wrapper>
 );

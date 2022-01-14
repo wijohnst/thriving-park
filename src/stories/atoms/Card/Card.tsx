@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react';
 import { CardWrapper } from 'stories/atoms/Card/Card.style';
 
 interface Props {
-  children: ReactNode[];
+  children: ReactNode[] | ReactNode;
   color?: string;
 }
 
