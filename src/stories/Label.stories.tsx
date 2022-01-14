@@ -48,3 +48,9 @@ Underlined.args = {
   ...Primary.args,
   isUnderlined: true,
 };
+
+export const Light = Template.bind({});
+Light.args = {
+  ...Primary.args,
+  textStyle: 'light',
+};
