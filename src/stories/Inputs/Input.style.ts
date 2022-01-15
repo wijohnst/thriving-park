@@ -10,7 +10,6 @@ export const InputElement = styled.input<{
   text-decoration: none;
   border-radius: 5px;
   outline: none;
-	/* padding: 0.5rem; */
 	padding: 0.25rem 0 0.25rem 0.5rem;
 	margin: 0.25rem;
 	box-sizing: border-box;

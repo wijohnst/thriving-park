@@ -15,6 +15,7 @@ interface Props {
   rows?: Rows;
   placeholder?: string;
   maxChararacterLength?: number;
+  onChange: (textAreaValue: string) => void;
 }
 
 // eslint-disable-next-line no-empty-pattern
@@ -23,6 +24,7 @@ export const TextArea = ({
   rows = 3,
   placeholder,
   maxChararacterLength,
+  onChange,
 }: Props) => {
   const [inputValue, setInputValue] = React.useState('');
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -32,6 +34,7 @@ export const TextArea = ({
 
   const handleChange = (event: React.SyntheticEvent<HTMLTextAreaElement>) => {
     if (!maxChararacterLength || charCount < maxChararacterLength) {
+      onChange(event.currentTarget.value);
       setInputValue(event.currentTarget.value);
     }
   };

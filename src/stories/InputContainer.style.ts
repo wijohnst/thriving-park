@@ -6,6 +6,7 @@ export const InputContainerWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
+  margin: 0.5rem;
 `;
 
 export const LabelWrapper = styled.div``;
