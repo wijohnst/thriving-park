@@ -29,10 +29,18 @@ const Template: ComponentStory<typeof ProfilePageRender> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  isLoading: false,
+};
 
 export const Loading = Template.bind({});
 Loading.args = {
   ...Default.args,
   isLoading: true,
+};
+
+export const Edit = Template.bind({});
+Edit.args = {
+  ...Default.args,
+  isEdit: true,
 };
