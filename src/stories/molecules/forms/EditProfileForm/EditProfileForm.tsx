@@ -1,6 +1,8 @@
 // Global Imports
 import * as React from 'react';
+import * as yup from 'yup';
 import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 // Local Imports
 import {
@@ -20,6 +22,11 @@ interface ProfileForm {
   neighborType: NeightborTypes;
   userBlurb: string;
 }
+
+const schema = yup.object().shape({
+  firstName: yup.string().required(),
+  lastName: yup.string().required(),
+});
 
 const neighborTypeOptions: OptionInfo[] = [
   {
@@ -46,7 +53,9 @@ const neighborTypeOptions: OptionInfo[] = [
 
 // eslint-disable-next-line no-empty-pattern
 export const EditProfileForm = ({}: Props) => {
-  const { handleSubmit, setValue, control } = useForm<ProfileForm>();
+  const { handleSubmit, setValue, control } = useForm<ProfileForm>({
+    resolver: yupResolver(schema),
+  });
 
   return (
     <EditProfileFormWrapper>
