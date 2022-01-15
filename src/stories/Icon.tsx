@@ -7,9 +7,13 @@ import { ReactComponent as DefaultIcon } from 'stories/assets/info_icon.svg';
 import { IconWrapper } from 'stories/Icon.style';
 
 interface Props {
+  /** Which Icon should be displayed? */
   icon: React.ReactElement;
+  /** How tall should the Icon be? */
   height?: number;
+  /** How wide should the Icon be? */
   width?: number;
+  /** What should happen when you click the Icon? */
   onClick?: () => void;
 }
 
