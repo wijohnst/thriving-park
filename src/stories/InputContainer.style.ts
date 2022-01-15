@@ -12,3 +12,7 @@ export const InputContainerWrapper = styled.div`
 export const LabelWrapper = styled.div``;
 
 export const InputWrapper = styled.div``;
+
+export const ErrorWrapper = styled.div`
+  margin: 0.2rem 0 0 0.3rem;
+`;

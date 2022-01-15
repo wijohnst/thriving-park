@@ -10,4 +10,5 @@ export const ErrorMessageSpan = styled.span<{
   color: ${(props) =>
     props.isWarning ? props.theme.warningBlue : props.theme.errorRed};
   letter-spacing: 0.15rem;
+  font-weight: 300;
 `;

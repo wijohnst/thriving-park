@@ -3,6 +3,7 @@ import React from 'react';
 
 // Local Imports
 import {
+  ErrorWrapper,
   InputContainerWrapper,
   LabelWrapper,
   InputWrapper,
@@ -12,6 +13,13 @@ import { Input } from 'stories/Input';
 import { InputType } from 'utils/sharedTypes';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
 import { Rows } from 'stories/Inputs/TextArea/TextArea';
+import { ErrorMessage } from 'stories/atoms/ErrorMessage/ErrorMessage';
+
+type ErrorTypes = 'error' | 'warning';
+interface Error {
+  type: ErrorTypes;
+  message: string;
+}
 
 interface Props {
   label: string;
@@ -21,6 +29,7 @@ interface Props {
   options?: Array<OptionInfo>;
   rows?: Rows;
   maxCharacterLength?: number;
+  error?: Error;
   onChange: (value?: any) => void;
 }
 
@@ -33,6 +42,7 @@ export const InputContainer = ({
   options,
   rows,
   maxCharacterLength,
+  error,
   onChange,
 }: Props) => {
   return (
@@ -49,6 +59,14 @@ export const InputContainer = ({
           rows={rows}
           maxCharacterLength={maxCharacterLength}
         />
+        {error && (
+          <ErrorWrapper>
+            <ErrorMessage
+              message={error.message}
+              isWarning={error.type === 'warning'}
+            />
+          </ErrorWrapper>
+        )}
       </InputWrapper>
     </InputContainerWrapper>
   );
