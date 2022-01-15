@@ -21,11 +21,14 @@ import { ReactComponent as CloseIcon } from 'stories/assets/ex_icon.svg';
 interface Props {
   placeholder?: string;
   options?: Array<OptionInfo>;
+  // onChange: (value: Pick<OptionInfo, 'value'>) => void;
+  onChange: (optionValue: string | number | boolean) => void;
 }
 
 export const Select = ({
   placeholder = 'Please select an option',
   options = defaultOptions,
+  onChange,
 }: Props) => {
   const selectRef = React.useRef<HTMLDivElement>(null);
   const [selectValue, setSelectValue] = React.useState<OptionInfo | undefined>(
@@ -49,6 +52,7 @@ export const Select = ({
   const updateSelectValue = (option: OptionInfo) => {
     setIsSelectOpen(false);
     setSelectValue(option);
+    onChange(option.value);
   };
 
   useOnExternalClick(selectRef, handleExternalClick);
