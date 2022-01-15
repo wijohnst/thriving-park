@@ -14,8 +14,10 @@ interface Props {
 
 // eslint-disable-next-line no-empty-pattern
 export const ErrorMessage = ({ message, isWarning = false }: Props) => {
+  const testId = isWarning ? 'warning-message' : 'error-message';
+
   return (
-    <ErrorMessageWrapper>
+    <ErrorMessageWrapper data-testid={testId}>
       <ErrorMessageSpan isWarning={isWarning}>{message}</ErrorMessageSpan>
     </ErrorMessageWrapper>
   );
