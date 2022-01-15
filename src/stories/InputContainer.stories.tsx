@@ -34,6 +34,24 @@ Default.args = {
   inputType: 'Text',
 };
 
+export const WithError = Template.bind({});
+WithError.args = {
+  ...Default.args,
+  error: {
+    type: 'error',
+    message: 'Error',
+  },
+};
+
+export const WithWarning = Template.bind({});
+WithWarning.args = {
+  ...Default.args,
+  error: {
+    type: 'warning',
+    message: 'Warning',
+  },
+};
+
 export const Select = Template.bind({});
 Select.args = {
   ...Default.args,
