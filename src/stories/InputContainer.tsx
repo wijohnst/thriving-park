@@ -18,7 +18,7 @@ import { ErrorMessage } from 'stories/atoms/ErrorMessage/ErrorMessage';
 type ErrorTypes = 'error' | 'warning';
 interface Error {
   type: ErrorTypes;
-  message: string;
+  message: string | undefined;
 }
 
 interface Props {

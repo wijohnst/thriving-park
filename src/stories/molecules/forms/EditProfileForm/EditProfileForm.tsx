@@ -24,8 +24,11 @@ interface ProfileForm {
 }
 
 const schema = yup.object().shape({
-  firstName: yup.string().required(),
-  lastName: yup.string().required(),
+  firstName: yup.string().required('First name is required.'),
+  lastName: yup.string().required('Last name is required.'),
+  neighborType: yup
+    .string()
+    .required('Please let us know your relationship to the neighborhood.'),
 });
 
 const neighborTypeOptions: OptionInfo[] = [
@@ -64,24 +67,32 @@ export const EditProfileForm = ({}: Props) => {
           <Controller
             control={control}
             name="firstName"
-            render={({ field: { onChange } }) => (
+            render={({ field: { onChange }, fieldState: { error } }) => (
               <InputContainer
                 label="First Name"
                 inputType="Text"
                 labelDisplayStyle="flexLeft"
                 onChange={onChange}
+                error={{
+                  type: 'error',
+                  message: error?.message,
+                }}
               />
             )}
           />
           <Controller
             control={control}
             name="lastName"
-            render={({ field: { onChange } }) => (
+            render={({ field: { onChange }, fieldState: { error } }) => (
               <InputContainer
                 label="Last Name"
                 inputType="Text"
                 labelDisplayStyle="flexLeft"
                 onChange={onChange}
+                error={{
+                  type: 'error',
+                  message: error?.message,
+                }}
               />
             )}
           />
@@ -90,7 +101,7 @@ export const EditProfileForm = ({}: Props) => {
           <Controller
             control={control}
             name="neighborType"
-            render={() => {
+            render={({ fieldState: { error } }) => {
               return (
                 <InputContainer
                   label="About"
@@ -101,6 +112,10 @@ export const EditProfileForm = ({}: Props) => {
                   onChange={(option: NeightborTypes) =>
                     setValue('neighborType', option)
                   }
+                  error={{
+                    type: 'error',
+                    message: error?.message,
+                  }}
                 />
               );
             }}

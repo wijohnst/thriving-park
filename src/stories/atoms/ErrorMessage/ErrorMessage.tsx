@@ -8,7 +8,7 @@ import {
 } from 'stories/atoms/ErrorMessage/ErrorMessage.style';
 
 interface Props {
-  message: string;
+  message: string | undefined;
   isWarning?: boolean;
 }
 
