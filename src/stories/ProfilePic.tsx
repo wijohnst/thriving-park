@@ -22,6 +22,10 @@ export const ProfilePic = ({
   size = SizesEnum.Medium,
 }: Props) => {
   return (
-    <ProfilePicWrapper imgURL={profilePictureURL} size={ProfileSizes[size]} />
+    <ProfilePicWrapper
+      imgURL={profilePictureURL}
+      size={ProfileSizes[size]}
+      data-testid="profile-picture"
+    />
   );
 };

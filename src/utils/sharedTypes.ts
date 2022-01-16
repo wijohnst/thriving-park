@@ -17,7 +17,7 @@ export interface UserInfo {
   userName: string;
   neighborType: NeightborTypes | undefined;
   neighborDate: Date | undefined;
-  userBlurb: string;
+  userBlurb: string | undefined;
 }
 
 export type TextStyles = 'bold' | 'light';
