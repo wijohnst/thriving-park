@@ -15,10 +15,15 @@ import { UserInfo } from 'utils/sharedTypes';
 interface Props {
   profilePictureURL: string;
   userInfo: UserInfo;
+  onClick: () => void;
 }
 
 // eslint-disable-next-line no-empty-pattern
-export const ProfileHeader = ({ profilePictureURL, userInfo }: Props) => {
+export const ProfileHeader = ({
+  profilePictureURL,
+  userInfo,
+  onClick,
+}: Props) => {
   const year = userInfo?.neighborDate?.getFullYear().toString();
   const neighborString = `${userInfo?.neighborType} since ${year}.`;
   return (
@@ -30,7 +35,7 @@ export const ProfileHeader = ({ profilePictureURL, userInfo }: Props) => {
         <IconLabel
           text={userInfo.userName}
           iconString="edit"
-          onClick={() => {}}
+          onClick={onClick}
         />
       </IconLabelWrapper>
       {userInfo.neighborType ? (
