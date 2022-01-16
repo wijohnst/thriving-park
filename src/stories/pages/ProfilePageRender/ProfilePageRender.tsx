@@ -8,23 +8,39 @@ import {
 } from 'stories/pages/ProfilePageRender/ProfilePageRender.style';
 import { Loading } from 'stories/molecules/Loading/Loading';
 import { Edit } from 'stories/pages/ProfilePageRender/Edit/Edit';
+import { Display } from 'stories/pages/ProfilePageRender/Display/Display';
+import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
+import { UserInfo } from 'utils/sharedTypes';
 
 interface Props {
   isLoading: boolean;
   isEdit: boolean;
+  userInfo: UserInfo;
+  profilePictureURL: string;
+  onEditClick: () => void;
 }
 
-export const ProfilePageRender = ({ isLoading, isEdit }: Props) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-
+export const ProfilePageRender = ({
+  isLoading,
+  isEdit,
+  userInfo,
+  profilePictureURL,
+  onEditClick,
+}: Props) => {
+  const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
   return (
     <ProfilePageRenderWrapper>
       {isLoading && <Loading />}
       {!isLoading && (
         <Main>
-          {/* TODO: Add ProfileHeader Molecule */}
+          <ProfileHeader
+            userInfo={userInfo}
+            isEdit={isEdit}
+            profilePictureURL={profilePictureURL}
+            onClick={onEditClick}
+          />
           {isEdit && <Edit />}
-          {!isEdit && <span>Display</span>}
+          {!isEdit && !hasIncompleteInfo && <Display userInfo={userInfo} />}
         </Main>
       )}
     </ProfilePageRenderWrapper>

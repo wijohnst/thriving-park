@@ -55,3 +55,9 @@ CompleteUserData.args = {
     userBlurb: undefined,
   },
 };
+
+export const Edit = Template.bind({});
+Edit.args = {
+  ...WithPicture.args,
+  isEdit: true,
+};

@@ -8,13 +8,16 @@ import {
   ProfilePicWrapper,
 } from 'stories/molecules/ProfileHeader/ProfileHeader.style';
 import { ProfilePic } from 'stories/ProfilePic';
+import { EditPic } from 'stories/molecules/EditPic/EditPic';
 import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
 import { Label } from 'stories/Label';
-import { UserInfo } from 'utils/sharedTypes';
+import { SizesEnum, UserInfo } from 'utils/sharedTypes';
+import { ReactComponent as PlusIcon } from 'stories/assets/plus_icon.svg';
 
 interface Props {
   profilePictureURL: string;
   userInfo: UserInfo;
+  isEdit: boolean;
   onClick: () => void;
 }
 
@@ -22,6 +25,7 @@ interface Props {
 export const ProfileHeader = ({
   profilePictureURL,
   userInfo,
+  isEdit,
   onClick,
 }: Props) => {
   const year = userInfo?.neighborDate?.getFullYear().toString();
@@ -29,23 +33,36 @@ export const ProfileHeader = ({
   return (
     <ProfileHeaderWrapper>
       <ProfilePicWrapper>
-        <ProfilePic profilePictureURL={profilePictureURL} />
+        {isEdit ? (
+          <EditPic
+            icon={<PlusIcon height={24} width={24} />}
+            size={SizesEnum.Medium}
+          >
+            <ProfilePic profilePictureURL={profilePictureURL} />
+          </EditPic>
+        ) : (
+          <ProfilePic profilePictureURL={profilePictureURL} />
+        )}
       </ProfilePicWrapper>
-      <IconLabelWrapper>
-        <IconLabel
-          text={userInfo.userName}
-          iconString="edit"
-          onClick={onClick}
-        />
-      </IconLabelWrapper>
-      {userInfo.neighborType ? (
-        <Label
-          text={neighborString}
-          displayStyle="flexCenter"
-          textStyle="light"
-        />
-      ) : (
-        <span>Edit profile</span>
+      {!isEdit && (
+        <>
+          <IconLabelWrapper>
+            <IconLabel
+              text={userInfo.userName}
+              iconString="edit"
+              onClick={onClick}
+            />
+          </IconLabelWrapper>
+          {userInfo.neighborType ? (
+            <Label
+              text={neighborString}
+              displayStyle="flexCenter"
+              textStyle="light"
+            />
+          ) : (
+            <span>Add additional profile information.</span>
+          )}
+        </>
       )}
     </ProfileHeaderWrapper>
   );
