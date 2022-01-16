@@ -6,6 +6,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ProfilePageRender } from 'stories/pages/ProfilePageRender/ProfilePageRender';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
+import { mockProfilePictureURL, mockUserBlurb } from 'mocks/sharedMocks';
 
 export default {
   title: 'Design System/Pages/ProfilePageRender',
@@ -31,16 +32,40 @@ const Template: ComponentStory<typeof ProfilePageRender> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   isLoading: false,
+  userInfo: {
+    userName: 'Joe Byron',
+    neighborType: 'Resident',
+    neighborDate: new Date('10/24/2018'),
+    userBlurb: mockUserBlurb,
+  },
+};
+
+export const IncompleteUserInfo = Template.bind({});
+IncompleteUserInfo.args = {
+  ...Default.args,
+  userInfo: {
+    userName: 'Joe Byron',
+    neighborType: undefined,
+    neighborDate: undefined,
+    userBlurb: undefined,
+  },
+};
+
+export const WithPicture = Template.bind({});
+WithPicture.args = {
+  ...Default.args,
+  profilePictureURL: mockProfilePictureURL,
+};
+
+export const Edit = Template.bind({});
+Edit.args = {
+  ...Default.args,
+  ...WithPicture.args,
+  isEdit: true,
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
   ...Default.args,
   isLoading: true,
-};
-
-export const Edit = Template.bind({});
-Edit.args = {
-  ...Default.args,
-  isEdit: true,
 };

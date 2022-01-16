@@ -10,7 +10,7 @@ const { Default } = composeStories(stories);
 
 describe('Display unit tests', () => {
   it('Should render the Display component', () => {
-    const { getByText } = render(<Default />);
-    expect(getByText('Display Works!')).toBeInTheDocument();
+    const { getByTestId } = render(<Default />);
+    expect(getByTestId('display-content')).toBeInTheDocument();
   });
 });
