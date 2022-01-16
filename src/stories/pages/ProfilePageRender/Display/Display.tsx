@@ -5,15 +5,16 @@ import * as React from 'react';
 import {
   Blurb,
   DisplayContent,
-  DisplayHeader,
-  DisplayHeaderContent,
+  // DisplayHeader,
+  // DisplayHeaderContent,
   DisplayWrapper,
 } from 'stories/pages/ProfilePageRender/Display/Display.style';
-import { ProfilePic } from 'stories/ProfilePic';
-import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
+// import { ProfilePic } from 'stories/ProfilePic';
+// import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
 import { UserInfo } from 'utils/sharedTypes';
-import { Label } from 'stories/Label';
+// import { Label } from 'stories/Label';
 import { Card } from 'stories/atoms/Card/Card';
+import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
 import { defaultTheme } from 'themes';
 
 interface Props {
@@ -24,38 +25,13 @@ interface Props {
 
 // eslint-disable-next-line no-empty-pattern
 export const Display = ({ profilePictureURL, userInfo, onClick }: Props) => {
-  const year = userInfo?.neighborDate?.getFullYear().toString();
-  const neighborString = `${userInfo.neighborType} since ${year}.`;
   return (
     <DisplayWrapper>
-      <DisplayHeader>
-        <ProfilePic profilePictureURL={profilePictureURL} />
-        {userInfo.neighborDate && (
-          <DisplayHeaderContent>
-            <IconLabel
-              iconString="edit"
-              text={userInfo.userName}
-              onClick={onClick}
-            />
-            <Label
-              text={neighborString}
-              textStyle="light"
-              displayStyle="flexCenter"
-            />
-          </DisplayHeaderContent>
-        )}
-        {!userInfo.neighborDate && (
-          <DisplayHeaderContent>
-            <Label text={userInfo.userName} displayStyle="flexCenter" />
-            <IconLabel
-              iconString="edit"
-              text="Add profile information"
-              textStyle="light"
-              onClick={onClick}
-            />
-          </DisplayHeaderContent>
-        )}
-      </DisplayHeader>
+      <ProfileHeader
+        profilePictureURL={profilePictureURL}
+        userInfo={userInfo}
+        onClick={onClick}
+      />
       {userInfo.userBlurb && (
         <DisplayContent>
           <Card color={defaultTheme.bightPurple}>
