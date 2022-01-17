@@ -24,9 +24,7 @@ describe('ProfilePageRender unit tests', () => {
 
   it('Should render the update profile CTA', () => {
     const { getByText } = render(<IncompleteUserInfo />);
-    expect(
-      getByText('Add additional profile information.')
-    ).toBeInTheDocument();
+    expect(getByText('Finish setting up your profile +')).toBeInTheDocument();
   });
 
   it('Should render the Edit Profile form', () => {

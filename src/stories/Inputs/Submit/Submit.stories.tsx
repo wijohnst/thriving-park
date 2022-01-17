@@ -3,13 +3,13 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
-import { Edit } from 'stories/pages/ProfilePageRender/Edit/Edit';
+import { Submit } from 'stories/Inputs/Submit/Submit';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 
 export default {
-  title: 'Design System/Pages/ProfilePageRender/Edit',
-  component: Edit,
+  title: 'Design System/Atoms/Inputs/Submit',
+  component: Submit,
   decorators: [
     (Story) => (
       <div
@@ -22,15 +22,15 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Edit>;
+} as ComponentMeta<typeof Submit>;
 
-const Template: ComponentStory<typeof Edit> = (args) => <Edit {...args} />;
+const Template: ComponentStory<typeof Submit> = (args) => <Submit {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
 
-export const IsSubmitting = Template.bind({});
-IsSubmitting.args = {
+export const IsLoading = Template.bind({});
+IsLoading.args = {
   ...Default.args,
   isLoading: true,
 };

@@ -11,6 +11,7 @@ const { Default } = composeStories(stories);
 describe('EditProfileForm unit tests', () => {
   it('Should render the EditProfileForm component', () => {
     const { getByText } = render(<Default />);
-    expect(getByText('EditProfileForm Works!')).toBeInTheDocument();
+    expect(getByText('First Name')).toBeInTheDocument();
+    expect(getByText('Last Name')).toBeInTheDocument();
   });
 });

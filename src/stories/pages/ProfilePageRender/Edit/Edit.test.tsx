@@ -11,6 +11,7 @@ const { Default } = composeStories(stories);
 describe('Edit unit tests', () => {
   it('Should render the Edit component', () => {
     const { getByText } = render(<Default />);
-    expect(getByText('Edit Works!')).toBeInTheDocument();
+    expect(getByText('First Name')).toBeInTheDocument();
+    expect(getByText('Last Name')).toBeInTheDocument();
   });
 });

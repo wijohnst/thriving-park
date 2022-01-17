@@ -30,3 +30,10 @@ const Template: ComponentStory<typeof Loading> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const CustomSize = Template.bind({});
+CustomSize.args = {
+  ...Default.args,
+  height: 40,
+  width: 40,
+};

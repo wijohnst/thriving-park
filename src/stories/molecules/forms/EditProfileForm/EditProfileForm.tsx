@@ -9,12 +9,17 @@ import {
   AboutQuestions,
   EditProfileFormWrapper,
   NameQuestions,
+  SubmitWrapper,
 } from 'stories/molecules/forms/EditProfileForm/EditProfileForm.style';
 import { InputContainer } from 'stories/InputContainer';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
 import { NeightborTypes } from 'utils/sharedTypes';
+import { SubmitInput } from 'stories/Inputs/index';
 
-interface Props {}
+interface Props {
+  isLoading: boolean;
+  isSubmitted: boolean;
+}
 
 interface ProfileForm {
   firstName: string;
@@ -54,8 +59,7 @@ const neighborTypeOptions: OptionInfo[] = [
   },
 ];
 
-// eslint-disable-next-line no-empty-pattern
-export const EditProfileForm = ({}: Props) => {
+export const EditProfileForm = ({ isLoading, isSubmitted }: Props) => {
   const { handleSubmit, setValue, control } = useForm<ProfileForm>({
     resolver: yupResolver(schema),
   });
@@ -138,7 +142,9 @@ export const EditProfileForm = ({}: Props) => {
             )}
           />
         </AboutQuestions>
-        <input type="submit" />
+        <SubmitWrapper>
+          <SubmitInput isLoading={isLoading} isSubmitted={isSubmitted} />
+        </SubmitWrapper>
       </form>
     </EditProfileFormWrapper>
   );

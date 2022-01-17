@@ -49,4 +49,5 @@ export const MaxCharacterLength = Template.bind({});
 MaxCharacterLength.args = {
   ...Default.args,
   maxChararacterLength: 10,
+  onChange: (value: string) => value,
 };
