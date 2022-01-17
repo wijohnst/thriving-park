@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import SvgIcon from 'stories/svgIcon';
+import SvgIcon from 'stories/atoms/SVGIcon/svgIcon';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 import { ReactComponent as Logo } from 'stories/assets/thriving_park_logo.svg';

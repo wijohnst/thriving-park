@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // Local Imports
-import { Button } from 'stories/Button';
+import { Button } from 'stories/atoms/Button/Button';
 import { ProfilePage } from 'stories/ProfilePage';
 import { useAppDispatch } from 'app/hooks';
 import { startSession } from 'features/session/sessionSlice';

@@ -12,7 +12,7 @@ import {
 } from 'stories/Inputs/Select/Select.style';
 import { OptionList } from 'stories/Inputs/Select/OptionList/OptionList';
 import { defaultOptions } from 'stories/Inputs/Select/OptionList/OptionList.stories';
-import { CaretIcon } from 'stories/CaretIcon';
+import { CaretIcon } from 'stories/molecules/CaretIcon/CaretIcon';
 import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
 import { Icon } from 'stories/atoms/Icon/Icon';

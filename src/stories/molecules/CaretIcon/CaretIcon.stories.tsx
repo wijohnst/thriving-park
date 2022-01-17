@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { CaretIcon } from 'stories/CaretIcon';
+import { CaretIcon } from 'stories/molecules/CaretIcon/CaretIcon';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

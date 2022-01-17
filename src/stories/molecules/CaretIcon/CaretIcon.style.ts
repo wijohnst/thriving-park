@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 // Local Imports
-import { Orientation } from 'stories/CaretIcon';
+import { Orientation } from 'stories/molecules/CaretIcon/CaretIcon';
 
 const transforms: Record<Orientation, string> = {
   Up: 'rotate(-180deg)',
