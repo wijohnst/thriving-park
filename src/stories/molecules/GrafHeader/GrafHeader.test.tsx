@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/GrafHeader.stories';
+import * as stories from 'stories/molecules/GrafHeader/GrafHeader.stories';
 
 const { Primary, Mobile } = composeStories(stories);
 

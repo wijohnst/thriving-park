@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { GrafHeader } from 'stories/GrafHeader';
+import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

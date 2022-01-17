@@ -10,7 +10,7 @@ import {
   GrafWrapper,
   IconWrapper,
   TextContent,
-} from 'stories/GrafHeader.style';
+} from 'stories/molecules/GrafHeader/GrafHeader.style';
 import { ReactComponent as Logo } from 'stories/assets/thriving_park_logo.svg';
 import SvgIcon from 'stories/atoms/SVGIcon/svgIcon';
 

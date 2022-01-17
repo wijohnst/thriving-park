@@ -7,7 +7,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { Layout } from 'stories/Layout';
-import { Primary as GrafHeader } from 'stories/GrafHeader.stories';
+import { Primary as GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader.stories';
 import { Default as NavBar } from 'stories/NavBar.stories';
 import { Default as ProfilePage } from 'stories/ProfilePage.stories';
 import sessionReducer from 'features/session/sessionSlice';
