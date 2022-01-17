@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { ProfilePic } from 'stories/ProfilePic';
+import { ProfilePic } from 'stories/atoms/ProfilePic/ProfilePic';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

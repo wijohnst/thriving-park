@@ -7,7 +7,7 @@ import {
   ProfileHeaderWrapper,
   ProfilePicWrapper,
 } from 'stories/molecules/ProfileHeader/ProfileHeader.style';
-import { ProfilePic } from 'stories/ProfilePic';
+import { ProfilePic } from 'stories/atoms/ProfilePic/ProfilePic';
 import { EditPic } from 'stories/molecules/EditPic/EditPic';
 import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
 import { Label } from 'stories/atoms/Label/Label';

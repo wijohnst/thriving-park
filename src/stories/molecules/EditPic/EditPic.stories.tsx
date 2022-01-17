@@ -10,7 +10,7 @@ import {
   Default as ProfilePic,
   Small as ProfilePicSmall,
   Large as ProfilePicLarge,
-} from 'stories/ProfilePic.stories';
+} from 'stories/atoms/ProfilePic/ProfilePic.stories';
 import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as PlusIcon } from 'stories/assets/plus_icon.svg';
 import { SizesEnum } from 'utils/sharedTypes';

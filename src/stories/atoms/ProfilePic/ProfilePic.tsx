@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Local Imports
-import { ProfilePicWrapper } from 'stories/ProfilePic.style';
+import { ProfilePicWrapper } from 'stories/atoms/ProfilePic/ProfilePic.style';
 import { SizesEnum } from 'utils/sharedTypes';
 
 interface Props {
