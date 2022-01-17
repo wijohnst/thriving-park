@@ -11,7 +11,7 @@ import {
   Small as ProfilePicSmall,
   Large as ProfilePicLarge,
 } from 'stories/ProfilePic.stories';
-import { Icon } from 'stories/Icon';
+import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as PlusIcon } from 'stories/assets/plus_icon.svg';
 import { SizesEnum } from 'utils/sharedTypes';
 

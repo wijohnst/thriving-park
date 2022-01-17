@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/Icon.stories';
+import * as stories from 'stories/atoms/Icon/Icon.stories';
 
 const { Default, Caret } = composeStories(stories);
 

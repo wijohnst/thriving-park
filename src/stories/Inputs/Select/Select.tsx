@@ -15,7 +15,7 @@ import { defaultOptions } from 'stories/Inputs/Select/OptionList/OptionList.stor
 import { CaretIcon } from 'stories/CaretIcon';
 import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
-import { Icon } from 'stories/Icon';
+import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as CloseIcon } from 'stories/assets/ex_icon.svg';
 
 interface Props {
