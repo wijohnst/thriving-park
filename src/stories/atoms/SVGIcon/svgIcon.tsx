@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SvgContainer } from 'stories/svgicon-styles';
+import { SvgContainer } from 'stories/atoms/SVGIcon/svgicon-styles';
 
 interface Props {
   Icon: React.FC<React.SVGProps<SVGAElement>>;

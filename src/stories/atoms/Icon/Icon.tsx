@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 // Local Imports
-import { SvgContainer } from 'stories/svgicon-styles';
+import { SvgContainer } from 'stories/atoms/SVGIcon/svgicon-styles';
 import { ReactComponent as DefaultIcon } from 'stories/assets/info_icon.svg';
 import { IconWrapper } from 'stories/atoms/Icon/Icon.style';
 

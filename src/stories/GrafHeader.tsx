@@ -12,7 +12,7 @@ import {
   TextContent,
 } from 'stories/GrafHeader.style';
 import { ReactComponent as Logo } from 'stories/assets/thriving_park_logo.svg';
-import SvgIcon from './svgIcon';
+import SvgIcon from 'stories/atoms/SVGIcon/svgIcon';
 
 interface Props {
   isMobile: boolean;

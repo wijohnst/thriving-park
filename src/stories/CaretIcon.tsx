@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Local Imports
-import { SvgContainer } from 'stories/svgicon-styles';
+import { SvgContainer } from 'stories/atoms/SVGIcon/svgicon-styles';
 import { ReactComponent as CaretSvg } from 'stories/assets/caret_icon.svg';
 import { CaretIconWrapper } from 'stories/CaretIcon.style';
 
