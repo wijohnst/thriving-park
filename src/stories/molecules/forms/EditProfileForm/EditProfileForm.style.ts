@@ -16,3 +16,10 @@ export const AboutQuestions = styled.section`
   display: flex;
   flex-flow: column nowrap;
 `;
+
+export const SubmitWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

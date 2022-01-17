@@ -22,6 +22,8 @@ export const defaultTheme = {
   secondaryFontFamily: "'Permanent Marker', serif",
   // GRADIENTS
   primaryGradient: 'linear-gradient(180deg, #007B8C 16.84%, #D6FBAE 90.36%)',
+  submissionGradient:
+    'linear-gradient(90deg, #ABFF4F 0%, rgba(123, 97, 255, 0.52) 100%)',
   // BACKGROUNDS
   grayTransparent: 'rgba(196,196,196,0.1)',
   // SHADOWS
