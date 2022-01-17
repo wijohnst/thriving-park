@@ -2,7 +2,7 @@
 import { User } from '@auth0/auth0-react';
 
 // Local Imports
-import { AppLinkProps } from 'stories/AppLink';
+import { AppLinkProps } from 'stories/atoms/AppLink/AppLink';
 
 export const breakpoints: { [key: string]: string } = {
   mobile: '(min-width: 600px)',

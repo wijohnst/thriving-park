@@ -6,8 +6,8 @@ import {
   IconLabelWrapper,
   IconWrapper,
 } from 'stories/molecules/IconLabel/IconLabel.style';
-import { Label } from 'stories/Label';
-import { Icon } from 'stories/Icon';
+import { Label } from 'stories/atoms/Label/Label';
+import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as EditIcon } from 'stories/assets/edit_icon.svg';
 import { TextStyles } from 'utils/sharedTypes';
 

@@ -3,7 +3,7 @@ import React from 'react';
 
 // Local Imports
 import { LoadingWrapper } from 'stories/molecules/Loading/Loading.style';
-import { Icon } from 'stories/Icon';
+import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as WheelIcon } from 'stories/assets/wheel_icon.svg';
 import { defaultTheme } from 'themes';
 

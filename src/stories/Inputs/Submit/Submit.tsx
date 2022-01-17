@@ -8,7 +8,7 @@ import {
   IconWrapper,
 } from 'stories/Inputs/Submit/Submit.style';
 import { Loading } from 'stories/molecules/Loading/Loading';
-import { Icon } from 'stories/Icon';
+import { Icon } from 'stories/atoms/Icon/Icon';
 import { ReactComponent as CheckIcon } from 'stories/assets/check_icon.svg';
 
 interface SubmitStateStrings {

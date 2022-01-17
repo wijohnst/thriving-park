@@ -11,7 +11,7 @@ import {
   NameQuestions,
   SubmitWrapper,
 } from 'stories/molecules/forms/EditProfileForm/EditProfileForm.style';
-import { InputContainer } from 'stories/InputContainer';
+import { InputContainer } from 'stories/molecules/InputContainer/InputContainer';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
 import { NeightborTypes } from 'utils/sharedTypes';
 import { SubmitInput } from 'stories/Inputs/index';

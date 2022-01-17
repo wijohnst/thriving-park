@@ -4,17 +4,17 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // Local Imports
-import { Button } from 'stories/Button';
+import { Button } from 'stories/atoms/Button/Button';
 import { ProfilePage } from 'stories/ProfilePage';
 import { useAppDispatch } from 'app/hooks';
 import { startSession } from 'features/session/sessionSlice';
-import { Layout } from 'stories/Layout';
+import { Layout } from 'stories/atoms/Layout/Layout';
 import {
   useGetUserByIdQuery,
   useAddUserMutation,
 } from 'features/session/sessionApi';
-import { GrafHeader } from 'stories/GrafHeader';
-import { NavBar } from 'stories/NavBar';
+import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
+import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
 
