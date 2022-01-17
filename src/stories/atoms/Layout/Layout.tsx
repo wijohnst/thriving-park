@@ -2,7 +2,7 @@
 import * as React from 'react';
 
 // Local Imports
-import { LayoutWrapper } from 'stories/Layout.style';
+import { LayoutWrapper } from 'stories/atoms/Layout/Layout.style';
 
 interface Props {
   children: Array<React.ReactElement> | React.ReactElement;

@@ -8,7 +8,7 @@ import { Button } from 'stories/atoms/Button/Button';
 import { ProfilePage } from 'stories/ProfilePage';
 import { useAppDispatch } from 'app/hooks';
 import { startSession } from 'features/session/sessionSlice';
-import { Layout } from 'stories/Layout';
+import { Layout } from 'stories/atoms/Layout/Layout';
 import {
   useGetUserByIdQuery,
   useAddUserMutation,
