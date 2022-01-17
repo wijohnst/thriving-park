@@ -5,10 +5,10 @@ import * as React from 'react';
 import {
   ProfilePageRenderWrapper,
   Main,
-} from 'stories/pages/ProfilePageRender/ProfilePageRender.style';
+} from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender.style';
 import { Loading } from 'stories/molecules/Loading/Loading';
-import { Edit } from 'stories/pages/ProfilePageRender/Edit/Edit';
-import { Display } from 'stories/pages/ProfilePageRender/Display/Display';
+import { Edit } from 'stories/pages/ProfilePage/ProfilePageRender/Edit/Edit';
+import { Display } from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display';
 import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
 import { UserInfo } from 'utils/sharedTypes';
 

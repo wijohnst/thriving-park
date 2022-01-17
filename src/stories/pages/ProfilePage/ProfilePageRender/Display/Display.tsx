@@ -8,7 +8,7 @@ import {
   // DisplayHeader,
   // DisplayHeaderContent,
   DisplayWrapper,
-} from 'stories/pages/ProfilePageRender/Display/Display.style';
+} from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display.style';
 // import { ProfilePic } from 'stories/ProfilePic';
 // import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
 import { UserInfo } from 'utils/sharedTypes';

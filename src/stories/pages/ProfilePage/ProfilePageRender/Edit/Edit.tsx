@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Local Imports
-import { EditWrapper } from 'stories/pages/ProfilePageRender/Edit/Edit.style';
+import { EditWrapper } from 'stories/pages/ProfilePage/ProfilePageRender/Edit/Edit.style';
 import { EditProfileForm } from 'stories/molecules/forms/EditProfileForm/EditProfileForm';
 
 interface Props {

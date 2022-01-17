@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/pages/ProfilePageRender/Display/Display.stories';
+import * as stories from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display.stories';
 
 const { Default } = composeStories(stories);
 

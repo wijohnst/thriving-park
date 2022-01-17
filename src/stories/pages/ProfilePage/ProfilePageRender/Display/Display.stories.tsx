@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
-import { Display } from 'stories/pages/ProfilePageRender/Display/Display';
+import { Display } from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/pages/ProfilePageRender/ProfilePageRender.stories';
+import * as stories from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender.stories';
 import { mockUserBlurb } from 'mocks/sharedMocks';
 
 const { Default, Loading, IncompleteUserInfo, Edit } = composeStories(stories);

@@ -5,7 +5,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { rest } from 'msw';
 
-import { ProfilePage } from 'stories/ProfilePage';
+import { ProfilePage } from 'stories/pages/ProfilePage/ProfilePage';
 import { sessionApi } from 'features/session/sessionApi';
 import sessionReducer from 'features/session/sessionSlice';
 import { TestUser } from 'utils/constants';

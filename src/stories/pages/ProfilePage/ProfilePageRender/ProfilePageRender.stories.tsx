@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
-import { ProfilePageRender } from 'stories/pages/ProfilePageRender/ProfilePageRender';
+import { ProfilePageRender } from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 import { mockProfilePictureURL, mockUserBlurb } from 'mocks/sharedMocks';
