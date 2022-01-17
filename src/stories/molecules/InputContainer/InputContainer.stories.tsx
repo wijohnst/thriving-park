@@ -3,7 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
-import { InputContainer } from 'stories/InputContainer';
+import { InputContainer } from 'stories/molecules/InputContainer/InputContainer';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

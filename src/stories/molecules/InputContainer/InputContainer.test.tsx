@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/InputContainer.stories';
+import * as stories from 'stories/molecules/InputContainer/InputContainer.stories';
 
 const { Default } = composeStories(stories);
 

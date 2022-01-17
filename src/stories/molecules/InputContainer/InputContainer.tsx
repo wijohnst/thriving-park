@@ -7,7 +7,7 @@ import {
   InputContainerWrapper,
   LabelWrapper,
   InputWrapper,
-} from 'stories/InputContainer.style';
+} from 'stories/molecules/InputContainer/InputContainer.style';
 import { Label, DisplayStyles } from 'stories/atoms/Label/Label';
 import { Input } from 'stories/Input';
 import { InputType } from 'utils/sharedTypes';
