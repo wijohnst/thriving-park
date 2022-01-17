@@ -38,6 +38,7 @@ Default.args = {
     neighborDate: new Date('10/24/2018'),
     userBlurb: mockUserBlurb,
   },
+  onEditClick: () => console.log('Handle Edit click....'),
 };
 
 export const IncompleteUserInfo = Template.bind({});
@@ -62,6 +63,8 @@ Edit.args = {
   ...Default.args,
   ...WithPicture.args,
   isEdit: true,
+  // eslint-disable-next-line no-console
+  onEditClick: () => console.log('Handle Add Picture click...'),
 };
 
 export const Loading = Template.bind({});

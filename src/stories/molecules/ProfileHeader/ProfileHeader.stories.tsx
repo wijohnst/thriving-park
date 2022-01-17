@@ -36,6 +36,8 @@ Default.args = {
     neighborDate: undefined,
     userBlurb: undefined,
   },
+  // eslint-disable-next-line no-console
+  onClick: () => console.log('Handle Edit click...'),
 };
 
 export const WithPicture = Template.bind({});
@@ -60,4 +62,6 @@ export const Edit = Template.bind({});
 Edit.args = {
   ...WithPicture.args,
   isEdit: true,
+  // eslint-disable-next-line no-console
+  onClick: () => console.log('Handle Add Picture click...'),
 };

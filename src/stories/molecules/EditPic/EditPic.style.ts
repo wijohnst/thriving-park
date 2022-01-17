@@ -18,4 +18,7 @@ export const IconWrapper = styled.div<{
   position: relative;
   top: ${(props) => props.top};
   right: ${(props) => props.right};
+  :hover {
+    cursor: pointer;
+  }
 `;
