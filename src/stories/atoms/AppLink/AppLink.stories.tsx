@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { AppLink } from 'stories/AppLink';
+import { AppLink } from 'stories/atoms/AppLink/AppLink';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 

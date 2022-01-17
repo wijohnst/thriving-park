@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { NavBar } from 'stories/NavBar';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
-import * as AppLinkStories from 'stories/AppLink.stories';
+import * as AppLinkStories from 'stories/atoms/AppLink/AppLink.stories';
 
 export default {
   title: 'Design System/ Molecules/NavBar',

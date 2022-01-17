@@ -3,7 +3,10 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // Local Imports
-import { AppLinkWrapper, AppLinkText } from 'stories/AppLink.style';
+import {
+  AppLinkWrapper,
+  AppLinkText,
+} from 'stories/atoms/AppLink/AppLink.style';
 
 export interface AppLinkProps {
   linkPath: string;
