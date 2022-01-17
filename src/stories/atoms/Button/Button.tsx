@@ -29,6 +29,7 @@ const Controller = styled.button<Pick<Props, 'isMobile'>>`
 export const Button = ({
   label,
   isMobile = false,
+  // eslint-disable-next-line no-console
   onClick: handleClick = () => console.log('Click!'),
 }: Props) => (
   <Wrapper onClick={() => handleClick()}>

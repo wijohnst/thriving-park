@@ -3,7 +3,7 @@ import React from 'react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import { Button } from 'stories/Button';
+import { Button } from 'stories/atoms/Button/Button';
 
 beforeAll(() => {});
 afterEach(() => {});
