@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Header } from 'stories/Header';
+import { Header } from 'stories/atoms/Header/Header';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 import { SizesEnum } from 'utils/sharedTypes';

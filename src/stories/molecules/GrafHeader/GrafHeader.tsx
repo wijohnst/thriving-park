@@ -2,8 +2,8 @@
 import * as React from 'react';
 
 // Local Imports
-import { Header } from 'stories/Header';
-import { GrafLabel } from 'stories/GrafLabel';
+import { Header } from 'stories/atoms/Header/Header';
+import { GrafLabel } from 'stories/atoms/GrafLabel/GrafLabel';
 import { SizesEnum } from 'utils/sharedTypes';
 import {
   GrafHeaderWrapper,

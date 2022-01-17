@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { GrafLabel } from 'stories/GrafLabel';
+import { GrafLabel } from 'stories/atoms/GrafLabel/GrafLabel';
 import { defaultTheme } from 'themes';
 import {
   standardWrapper,

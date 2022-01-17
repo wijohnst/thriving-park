@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/Header.stories';
+import * as stories from 'stories/atoms/Header/Header.stories';
 
 const { Primary, RegularCasing, Subheading } = composeStories(stories);
 

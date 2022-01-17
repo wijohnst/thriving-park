@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import * as stories from 'stories/GrafLabel.stories';
+import * as stories from 'stories/atoms/GrafLabel/GrafLabel.stories';
 
 const { Primary } = composeStories(stories);
 
