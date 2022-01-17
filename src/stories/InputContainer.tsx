@@ -8,7 +8,7 @@ import {
   LabelWrapper,
   InputWrapper,
 } from 'stories/InputContainer.style';
-import { Label, DisplayStyles } from 'stories/Label';
+import { Label, DisplayStyles } from 'stories/atoms/Label/Label';
 import { Input } from 'stories/Input';
 import { InputType } from 'utils/sharedTypes';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';

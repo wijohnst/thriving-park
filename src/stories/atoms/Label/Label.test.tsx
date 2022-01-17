@@ -3,7 +3,7 @@ import React from 'react';
 
 // Local Imports
 import { render } from 'utils/test-utils';
-import { Label } from 'stories/Label';
+import { Label } from 'stories/atoms/Label/Label';
 
 beforeAll(() => {});
 afterEach(() => {});
