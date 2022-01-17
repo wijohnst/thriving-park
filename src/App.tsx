@@ -14,7 +14,7 @@ import {
   useAddUserMutation,
 } from 'features/session/sessionApi';
 import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
-import { NavBar } from 'stories/NavBar';
+import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
 

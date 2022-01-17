@@ -2,13 +2,13 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import { NavBar } from 'stories/NavBar';
+import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 import * as AppLinkStories from 'stories/atoms/AppLink/AppLink.stories';
 
 export default {
-  title: 'Design System/ Molecules/NavBar',
+  title: 'Design System/Molecules/NavBar',
   component: NavBar,
   decorators: [
     (Story) => (
