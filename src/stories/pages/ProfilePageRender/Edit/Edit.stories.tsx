@@ -28,3 +28,15 @@ const Template: ComponentStory<typeof Edit> = (args) => <Edit {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const IsSubmitting = Template.bind({});
+IsSubmitting.args = {
+  ...Default.args,
+  isLoading: true,
+};
+
+export const IsSubmitted = Template.bind({});
+IsSubmitted.args = {
+  ...Default.args,
+  isSubmitted: true,
+};
