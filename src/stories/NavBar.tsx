@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Local Imports
-import { AppLink, AppLinkProps } from 'stories/AppLink';
+import { AppLink, AppLinkProps } from 'stories/atoms/AppLink/AppLink';
 import { NavBarWrapper } from './NavBar.styles';
 
 interface Props {

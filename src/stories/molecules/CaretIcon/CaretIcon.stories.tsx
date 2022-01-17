@@ -6,7 +6,7 @@ import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 
 export default {
-  title: 'Design System/Atoms/CaretIcon',
+  title: 'Design System/Molecules/CaretIcon',
   component: CaretIcon,
   decorators: [
     (Story) => (
