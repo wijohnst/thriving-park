@@ -12,6 +12,7 @@ interface Props {
   children: Array<React.ReactElement> | React.ReactElement;
   icon: React.ReactElement;
   size: SizesEnum;
+  onClick: () => void;
 }
 
 export interface SizeProps {
@@ -35,12 +36,16 @@ const sizePropsMap: { [key: number]: SizeProps } = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const EditPic = ({ children, icon, size }: Props) => {
+export const EditPic = ({ children, icon, size, onClick }: Props) => {
   const sizeProps: SizeProps = sizePropsMap[size];
   return (
     <EditPicWrapper data-testid="editpic-wrapper">
       {children}
-      <IconWrapper top={sizeProps.top} right={sizeProps.right}>
+      <IconWrapper
+        top={sizeProps.top}
+        right={sizeProps.right}
+        onClick={onClick}
+      >
         {icon}
       </IconWrapper>
     </EditPicWrapper>

@@ -13,10 +13,15 @@ import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
 import { UserInfo } from 'utils/sharedTypes';
 
 interface Props {
+  /** Is the component loading? */
   isLoading: boolean;
+  /** Is the user editing their profile? */
   isEdit: boolean;
+  /** What's the known information for the user? */
   userInfo: UserInfo;
+  /** Where should we look for the user's profile picture? */
   profilePictureURL: string;
+  /** What should happen when we click the various edit icons? */
   onEditClick: () => void;
 }
 
@@ -25,6 +30,7 @@ export const ProfilePageRender = ({
   isEdit,
   userInfo,
   profilePictureURL,
+  // eslint-disable-next-line no-console
   onEditClick,
 }: Props) => {
   const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
