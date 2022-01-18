@@ -6,6 +6,8 @@ export const AuthCTAWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  font-size: 1rem;
+  font-weight: 800;
 `;
 
 export const LinkWrapper = styled.div`
