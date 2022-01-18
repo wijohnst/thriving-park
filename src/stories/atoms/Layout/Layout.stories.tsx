@@ -13,6 +13,7 @@ import { Default as ProfilePage } from 'stories/pages/ProfilePage/ProfilePage.st
 import sessionReducer from 'features/session/sessionSlice';
 import { sessionApi } from 'features/session/sessionApi';
 import { TestUser } from 'utils/constants';
+import { AuthCTA } from 'stories/molecules/AuthCTA/AuthCTA';
 
 const store = configureStore({
   reducer: {
@@ -73,6 +74,11 @@ Default.parameters = {
 };
 Default.args = {
   children: [
+    <AuthCTA
+      isAuthenticated={false}
+      // eslint-disable-next-line no-console
+      onClick={() => console.log('Handle Auth click...')}
+    />,
     <GrafHeader isMobile={false} key={0} />,
     // @ts-ignore
     <NavBar appLinks={NavBar.args?.appLinks} />,
