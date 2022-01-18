@@ -30,10 +30,10 @@ const Template: ComponentStory<typeof AuthCTA> = (args) => (
 
 export const SignIn = Template.bind({});
 SignIn.args = {
-  isAuthorized: false,
+  isAuthenticated: false,
 };
 
 export const SignOut = Template.bind({});
 SignOut.args = {
-  isAuthorized: true,
+  isAuthenticated: true,
 };

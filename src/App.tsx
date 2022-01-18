@@ -18,6 +18,7 @@ import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
 import { ButtonWrapper } from 'App.style';
+import { AuthCTA } from 'stories/molecules/AuthCTA/AuthCTA';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -62,6 +63,10 @@ const App = () => {
   return (
     <Router>
       <Layout>
+        <AuthCTA
+          isAuthenticated={isAuthenticated}
+          onClick={() => console.log('Handle click...')}
+        />
         <GrafHeader isMobile={false} />
         <NavBar appLinks={NavLinks} />
         <Routes>
