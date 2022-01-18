@@ -5,6 +5,7 @@ import * as React from 'react';
 import {
   ProfilePageRenderWrapper,
   Main,
+  LoadingWrapper,
 } from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender.style';
 import { Loading } from 'stories/molecules/Loading/Loading';
 import { Edit } from 'stories/pages/ProfilePage/ProfilePageRender/Edit/Edit';
@@ -41,7 +42,11 @@ export const ProfilePageRender = ({
   const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
   return (
     <ProfilePageRenderWrapper>
-      {isLoading && <Loading />}
+      {isLoading && (
+        <LoadingWrapper>
+          <Loading />
+        </LoadingWrapper>
+      )}
       {!isLoading && (
         <Main>
           <ProfileHeader

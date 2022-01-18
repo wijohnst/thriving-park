@@ -5,12 +5,13 @@ import * as React from 'react';
 import { useAppSelector } from 'app/hooks';
 import { selectSession } from 'features/session/sessionSlice';
 import { useGetUserByIdQuery } from 'features/session/sessionApi';
-import { ProfilePic } from 'stories/atoms/ProfilePic/ProfilePic';
-import { SizesEnum } from 'utils/sharedTypes';
+// import { ProfilePic } from 'stories/atoms/ProfilePic/ProfilePic';
+// import { SizesEnum } from 'utils/sharedTypes';
 import {
   ProfilePageWrapper,
-  TextPicWrapper,
+  // TextPicWrapper,
 } from 'stories/pages/ProfilePage/ProfilePage.style';
+import { ProfilePageRender } from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender';
 
 interface Props {
   userId: string | undefined;
@@ -27,25 +28,44 @@ export const ProfilePage = ({ userId = '' }: Props) => {
     }
   );
 
+  const [isEdit, setIsEdit] = React.useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isAuthLoading, isAuthenticated, user } = useAppSelector((state) =>
     selectSession(state)
   );
 
-  if (isAuthLoading || queryIsLoading) {
-    return <span>Loading...</span>;
-  }
-
   return isAuthenticated && data ? (
     <ProfilePageWrapper>
-      <TextPicWrapper>
-        <span>Welcome {user?.name ?? 'User'}</span>
-        <ProfilePic
-          profilePictureURL={data.data.profilePictureURL}
-          size={SizesEnum.Medium}
-        />
-      </TextPicWrapper>
+      <ProfilePageRender
+        isLoading={isAuthLoading || queryIsLoading}
+        isEdit={isEdit}
+        userInfo={{
+          userName: 'Joe Byron',
+          neighborType: undefined,
+          neighborDate: undefined,
+          userBlurb: undefined,
+        }}
+        profilePictureURL={data?.data.profilePictureURL ?? ''}
+        isFormSubmitted={false}
+        isFormSubmitting={false}
+        onEditClick={
+          !isEdit
+            ? () => setIsEdit(!isEdit)
+            : () => console.log('Add picture click...')
+        }
+      />
     </ProfilePageWrapper>
   ) : (
+    // <ProfilePageWrapper>
+    //   <TextPicWrapper>
+    //     <span>Welcome {user?.name ?? 'User'}</span>
+    //     <ProfilePic
+    //       profilePictureURL={data.data.profilePictureURL}
+    //       size={SizesEnum.Medium}
+    //     />
+    //   </TextPicWrapper>
+    // </ProfilePageWrapper>
     <span>Please Login</span>
   );
 };

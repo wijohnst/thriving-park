@@ -15,7 +15,7 @@ interface Props {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Loading = ({ height = 200, width = 200 }: Props) => {
   return (
-    <LoadingWrapper data-testid="loading-spinner">
+    <LoadingWrapper data-testid="loading-spinner" height={height} width={width}>
       <Icon
         icon={<WheelIcon fill={defaultTheme.secondaryBlue} />}
         height={height}
