@@ -12,6 +12,7 @@ export const ProfilePageWrapper = styled.div`
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  width: 50%;
 `;
 
 export const TextPicWrapper = styled.div`

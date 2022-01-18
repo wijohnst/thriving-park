@@ -17,6 +17,7 @@ import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
 import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
+import { ButtonWrapper } from 'App.style';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -68,12 +69,14 @@ const App = () => {
           <Route path="/logout" element={<span>Logged Out</span>} />
           <Route path="/profile" element={<ProfilePage userId={user?.sub} />} />
         </Routes>
-        <Button
-          label="Login"
-          isMobile={false}
-          onClick={() => loginWithRedirect()}
-        />
-        <Button label="Logout" isMobile={false} onClick={() => logout()} />
+        <ButtonWrapper>
+          <Button
+            label="Login"
+            isMobile={false}
+            onClick={() => loginWithRedirect()}
+          />
+          <Button label="Logout" isMobile={false} onClick={() => logout()} />
+        </ButtonWrapper>
       </Layout>
     </Router>
   );

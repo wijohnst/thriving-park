@@ -1,9 +1,7 @@
 // Global Imports
 import styled from 'styled-components';
 
-export const EditProfileFormWrapper = styled.div`
-  width: 100%;
-`;
+export const EditProfileFormWrapper = styled.div``;
 
 export const NameQuestions = styled.section`
   width: 100%;
