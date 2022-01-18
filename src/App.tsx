@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 // Local Imports
-import { Button } from 'stories/atoms/Button/Button';
 import { ProfilePage } from 'stories/pages/ProfilePage/ProfilePage';
 import { useAppDispatch } from 'app/hooks';
 import { startSession } from 'features/session/sessionSlice';
@@ -17,7 +16,7 @@ import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
 import { NavBar } from 'stories/molecules/NavBar/NavBar';
 import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
-import { ButtonWrapper } from 'App.style';
+import { AuthCTA } from 'stories/molecules/AuthCTA/AuthCTA';
 
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
@@ -62,6 +61,10 @@ const App = () => {
   return (
     <Router>
       <Layout>
+        <AuthCTA
+          isAuthenticated={isAuthenticated}
+          onClick={isAuthenticated ? () => logout() : () => loginWithRedirect()}
+        />
         <GrafHeader isMobile={false} />
         <NavBar appLinks={NavLinks} />
         <Routes>
@@ -69,14 +72,6 @@ const App = () => {
           <Route path="/logout" element={<span>Logged Out</span>} />
           <Route path="/profile" element={<ProfilePage userId={user?.sub} />} />
         </Routes>
-        <ButtonWrapper>
-          <Button
-            label="Login"
-            isMobile={false}
-            onClick={() => loginWithRedirect()}
-          />
-          <Button label="Logout" isMobile={false} onClick={() => logout()} />
-        </ButtonWrapper>
       </Layout>
     </Router>
   );
