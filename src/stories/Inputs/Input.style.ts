@@ -19,3 +19,30 @@ export const InputElement = styled.input<{
 		font-style: italic;
 	}
 `;
+
+export const UploadElement = styled(InputElement)<{
+  hasFile: boolean;
+}>`
+  color: transparent;
+  border: none;
+  &:before {
+    cursor: pointer;
+  }
+
+  ::-webkit-file-upload-button {
+    display: ${(props) => (props.hasFile ? 'none' : 'inline-block')};
+    border: none;
+    border-radius: 5px;
+    padding: 0.25rem;
+    text-decoration: none;
+    backgrond-color: none;
+    outline: none;
+    background: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+    font-weight: 800;
+    text-decoration: underline;
+    font-size: 1rem;
+  }
+`;

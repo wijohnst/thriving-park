@@ -8,7 +8,7 @@ import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 
 export default {
-  title: 'Design System/Atoms/Inputs/Upload',
+  title: 'Design System/Atoms/Inputs/UploadInput',
   component: Upload,
   decorators: [
     (Story) => (
@@ -27,4 +27,37 @@ export default {
 const Template: ComponentStory<typeof Upload> = (args) => <Upload {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  isUploading: false,
+  onChange: () => {},
+};
+
+export const Uploading = Template.bind({});
+Uploading.args = {
+  ...Default.args,
+  isUploading: true,
+};
+
+export const UploadSuccessful = Template.bind({});
+UploadSuccessful.args = {
+  ...Default.args,
+  isUploadSuccessful: true,
+};
+
+export const Failed = Template.bind({});
+Failed.args = {
+  ...Default.args,
+  hasFailed: true,
+};
+
+export const AcceptsOnlyImages = Template.bind({});
+AcceptsOnlyImages.args = {
+  ...Default.args,
+  accept: 'image/*',
+};
+
+export const UploadMultipleFiles = Template.bind({});
+UploadMultipleFiles.args = {
+  ...Default.args,
+  isMultiple: true,
+};
