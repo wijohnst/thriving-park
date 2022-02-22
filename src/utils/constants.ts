@@ -31,3 +31,21 @@ export const NavLinks: Array<AppLinkProps> = [
     isActive: false,
   },
 ];
+
+export const defaultOptions = [
+  {
+    key: 1,
+    label: 'Option 1',
+    value: 1,
+  },
+  {
+    key: 2,
+    label: 'Option 2',
+    value: 2,
+  },
+  {
+    key: 3,
+    label: 'Option 3',
+    value: 3,
+  },
+];

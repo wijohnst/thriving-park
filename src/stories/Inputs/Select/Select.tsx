@@ -11,7 +11,7 @@ import {
   IconWrapper,
 } from 'stories/Inputs/Select/Select.style';
 import { OptionList } from 'stories/Inputs/Select/OptionList/OptionList';
-import { defaultOptions } from 'stories/Inputs/Select/OptionList/OptionList.stories';
+import { defaultOptions } from 'utils/constants';
 import { CaretIcon } from 'stories/molecules/CaretIcon/CaretIcon';
 import { SelectContext } from 'stories/Inputs/Select/SelectContext';
 import { OptionInfo } from 'stories/Inputs/Select/Option/Option';
