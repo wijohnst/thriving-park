@@ -66,6 +66,7 @@ export const EditProfileForm = ({ isLoading, isSubmitted }: Props) => {
 
   return (
     <EditProfileFormWrapper>
+      {/* eslint-disable-next-line no-console */}
       <form onSubmit={handleSubmit((formVals) => console.log(formVals))}>
         <NameQuestions>
           <Controller
