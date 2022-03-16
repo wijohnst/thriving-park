@@ -5,6 +5,8 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { rest } from 'msw';
 
+import { defaultTheme } from 'themes';
+import { standardWrapper } from 'stories/decoratorStyles';
 import { ProfilePage } from 'stories/pages/ProfilePage/ProfilePage';
 import { sessionApi } from 'features/session/sessionApi';
 import sessionReducer from 'features/session/sessionSlice';
@@ -40,7 +42,14 @@ export default {
         redirectUri={window.location.origin}
       >
         <ReduxProvider store={store}>
-          <Story />
+          <div
+            style={{
+              backgroundColor: defaultTheme.primaryBlue,
+              ...standardWrapper,
+            }}
+          >
+            <Story />
+          </div>
         </ReduxProvider>
       </Auth0Provider>
     ),

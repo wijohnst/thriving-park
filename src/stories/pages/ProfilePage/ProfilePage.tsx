@@ -35,7 +35,8 @@ export const ProfilePage = ({ userId = '' }: Props) => {
     selectSession(state)
   );
 
-  return isAuthenticated && data ? (
+  // return isAuthenticated && data ? (
+  return isAuthenticated ? (
     <ProfilePageWrapper>
       <ProfilePageRender
         isLoading={isAuthLoading || queryIsLoading}
@@ -57,15 +58,6 @@ export const ProfilePage = ({ userId = '' }: Props) => {
       />
     </ProfilePageWrapper>
   ) : (
-    // <ProfilePageWrapper>
-    //   <TextPicWrapper>
-    //     <span>Welcome {user?.name ?? 'User'}</span>
-    //     <ProfilePic
-    //       profilePictureURL={data.data.profilePictureURL}
-    //       size={SizesEnum.Medium}
-    //     />
-    //   </TextPicWrapper>
-    // </ProfilePageWrapper>
     <span>Please Login</span>
   );
 };
