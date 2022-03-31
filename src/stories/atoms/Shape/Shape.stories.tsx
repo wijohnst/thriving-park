@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Local Imports
 import { Shape } from 'stories/atoms/Shape/Shape';
+import { defaultTheme } from 'themes';
 
 export default {
   title: 'Design System/Atoms/Shape',
@@ -12,7 +13,7 @@ export default {
     (Story) => (
       <div
         style={{
-          backgroundColor: '#C4C4C4',
+          backgroundColor: defaultTheme.primaryGray,
           width: '100px',
           height: '100px',
         }}
