@@ -27,8 +27,7 @@ const Template: ComponentStory<typeof Shape> = (args) => <Shape {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  color: '#C4C4C4',
-  shape: 'square',
+  shape: 'default',
 };
 
 export const Rectangle = Template.bind({});
@@ -40,5 +39,5 @@ Rectangle.args = {
 export const Color = Template.bind({});
 Color.args = {
   ...Default.args,
-  color: '#8EFF01',
+  shape: 'color',
 };

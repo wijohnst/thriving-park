@@ -5,15 +5,12 @@ import React from 'react';
 import { ShapeWrapper } from 'stories/atoms/Shape/Shape.style';
 
 interface Props {
-  color?: '#C4C4C4' | '#8EFF01';
-  shape?: 'square' | 'rectangle';
+  shape?: 'default' | 'rectangle' | 'color';
 }
 
 // eslint-disable-next-line no-empty-pattern
-export const Shape = ({ color = '#C4C4C4', shape = 'square' }: Props) => {
-  const testId = () => shape === 'rectangle' ? 'rectangle' : color === '#8EFF01' ? 'color' : 'default'
-
+export const Shape = ({ shape = 'default' }: Props) => {
   return (
-    <ShapeWrapper color={color} shape={shape} data-testid={`shape-component-${testId()}`} />
+    <ShapeWrapper shape={shape} data-testid={`shape-component-${shape}`} />
   );
 };
