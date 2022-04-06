@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 // Local Imports
 import { Shape } from 'stories/atoms/Shape/Shape';
 import { defaultTheme } from 'themes';
+import { ShapeEnum, ColorEnum } from 'utils/sharedTypes';
 
 export default {
   title: 'Design System/Atoms/Shape',
@@ -28,17 +29,17 @@ const Template: ComponentStory<typeof Shape> = (args) => <Shape {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  shape: 'default',
+  ...Default.args
 };
 
 export const Rectangle = Template.bind({});
 Rectangle.args = {
   ...Default.args,
-  shape: 'rectangle',
+  shape: ShapeEnum.RECTANGLE,
 };
 
 export const Color = Template.bind({});
 Color.args = {
   ...Default.args,
-  shape: 'color',
+  color: ColorEnum.GREEN,
 };
