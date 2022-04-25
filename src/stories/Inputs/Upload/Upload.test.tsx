@@ -21,6 +21,7 @@ describe('Upload unit tests', () => {
     });
     const { getByTestId } = render(<Default />);
     const fileInput = getByTestId('file-input') as HTMLFormElement;
+    // @ts-ignore - Click event not recognized
     userEvent.upload(fileInput, testFile);
     expect(fileInput.files[0]).toStrictEqual(testFile);
     expect(fileInput.files).toHaveLength(1);
