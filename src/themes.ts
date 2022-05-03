@@ -12,7 +12,7 @@ export const defaultTheme = {
   brightGreen: '#ABFF4F',
   primaryGray: '#E5E5E5',
   secondaryGray: '#777777',
-  bightPurple: '#7B61FF',
+  brightPurple: '#7B61FF',
   errorRed: '#FD0000',
   warningBlue: '#0019FD',
   // BORDER

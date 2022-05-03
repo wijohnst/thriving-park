@@ -25,8 +25,8 @@ export const Display = ({ userInfo }: Props) => {
   return (
     <DisplayWrapper>
       {userInfo.userBlurb && (
-        <DisplayContent data-testid="display-content">
-          <Card color={defaultTheme.bightPurple}>
+        <DisplayContent data-testid='display-content'>
+          <Card color={defaultTheme.brightPurple}>
             <Blurb>{userInfo.userBlurb}</Blurb>
           </Card>
         </DisplayContent>
