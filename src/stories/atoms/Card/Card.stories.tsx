@@ -34,5 +34,5 @@ Default.args = {
 export const Color = Template.bind({});
 Color.args = {
   ...Default.args,
-  color: defaultTheme.bightPurple,
+  color: defaultTheme.brightPurple,
 };
