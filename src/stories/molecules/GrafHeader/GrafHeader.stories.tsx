@@ -5,6 +5,8 @@ import { GrafHeader } from 'stories/molecules/GrafHeader/GrafHeader';
 import { defaultTheme } from 'themes';
 import { standardWrapper } from 'stories/decoratorStyles';
 
+import { screenSizes } from 'utils/constants';
+
 export default {
   title: 'Design System/Molecules/GrafHeader',
   component: GrafHeader,
@@ -29,10 +31,10 @@ const Template: ComponentStory<typeof GrafHeader> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  isMobile: false,
+  screenSize: screenSizes.Desktop,
 };
 
 export const Mobile = Template.bind({});
 Mobile.args = {
-  isMobile: true,
+  screenSize: screenSizes.Mobile,
 };
