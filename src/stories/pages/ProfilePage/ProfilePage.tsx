@@ -29,6 +29,7 @@ export const ProfilePage = ({ userId = '' }: Props) => {
   );
 
   const [isEdit, setIsEdit] = React.useState(false);
+  const [isPhotoUpload, setIsPhotoUpload] = React.useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { isAuthLoading, isAuthenticated, user } = useAppSelector((state) =>
@@ -41,6 +42,7 @@ export const ProfilePage = ({ userId = '' }: Props) => {
       <ProfilePageRender
         isLoading={isAuthLoading || queryIsLoading}
         isEdit={isEdit}
+        isPhotoUpload={isPhotoUpload}
         userInfo={{
           userName: 'Joe Byron',
           neighborType: undefined,
@@ -51,9 +53,7 @@ export const ProfilePage = ({ userId = '' }: Props) => {
         isFormSubmitted={false}
         isFormSubmitting={false}
         onEditClick={
-          !isEdit
-            ? () => setIsEdit(!isEdit)
-            : () => console.log('Add picture click...')
+          !isEdit ? () => setIsEdit(!isEdit) : () => setIsPhotoUpload(true)
         }
       />
     </ProfilePageWrapper>
