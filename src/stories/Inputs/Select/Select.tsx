@@ -41,12 +41,10 @@ export const Select = ({
    */
   const handleClick = () => {
     setIsSelectOpen(!isSelectOpen);
-    window.clearTimeout();
   };
 
   const handleExternalClick = () => {
     setIsSelectOpen(false);
-    window.clearTimeout();
   };
 
   const updateSelectValue = (option: OptionInfo) => {
@@ -67,18 +65,7 @@ export const Select = ({
 
   return (
     <SelectContext.Provider value={value}>
-      <SelectWrapper
-        ref={selectRef}
-        onClick={handleClick}
-        onMouseEnter={
-          !selectValue ? () => window.setTimeout(handleClick, 500) : () => {}
-        }
-        onMouseLeave={
-          !selectValue
-            ? () => window.setTimeout(handleExternalClick, 500)
-            : () => {}
-        }
-      >
+      <SelectWrapper ref={selectRef} onClick={handleClick}>
         <SelectHeader>
           {selectValue ? (
             <span>{selectValue.label}</span>
