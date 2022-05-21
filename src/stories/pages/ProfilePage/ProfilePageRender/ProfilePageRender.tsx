@@ -12,12 +12,15 @@ import { Edit } from 'stories/pages/ProfilePage/ProfilePageRender/Edit/Edit';
 import { Display } from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display';
 import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
 import { UserInfo } from 'utils/sharedTypes';
+import { Upload } from 'stories/Inputs/Upload/Upload';
 
 interface Props {
   /** Is the component loading? */
   isLoading: boolean;
   /** Is the user editing their profile? */
   isEdit: boolean;
+  /** Did the user click the edit profile picture icon? */
+  isPhotoUpload: boolean;
   /** What's the known information for the user? */
   userInfo: UserInfo;
   /** Where should we look for the user's profile picture? */
@@ -33,6 +36,7 @@ interface Props {
 export const ProfilePageRender = ({
   isLoading,
   isEdit,
+  isPhotoUpload,
   userInfo,
   profilePictureURL,
   isFormSubmitting,
@@ -51,10 +55,18 @@ export const ProfilePageRender = ({
         <Main>
           <ProfileHeader
             userInfo={userInfo}
-            isEdit={isEdit}
+            isEdit={isPhotoUpload ? false : isEdit}
             profilePictureURL={profilePictureURL}
             onClick={onEditClick}
           />
+          {isPhotoUpload && (
+            // eslint-disable-next-line no-console
+            <Upload
+              onChange={() => console.log('On Change Event...')}
+              accept="image/*"
+              testId="edit-profile-pic-input"
+            />
+          )}
           {isEdit && (
             <Edit isLoading={isFormSubmitting} isSubmitted={isFormSubmitted} />
           )}

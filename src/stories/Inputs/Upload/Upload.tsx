@@ -31,6 +31,8 @@ interface Props {
   accept?: string;
   /** Can the user upload more than one file? */
   isMultiple?: boolean;
+  /** Optional testId string */
+  testId?: string;
   /** onChange callback - will always return a FileList */
   onChange: (fileList: FileList) => void;
 }
@@ -43,6 +45,7 @@ export const Upload = ({
   hasFailed = false,
   accept = '*',
   isMultiple = false,
+  testId = 'upload-input',
   onChange,
 }: Props) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
@@ -60,7 +63,7 @@ export const Upload = ({
 
   return (
     <>
-      <UploadWrapper isActive={false}>
+      <UploadWrapper isActive={false} data-testid={testId}>
         <UploadText>
           {!hasFile &&
             !isUploading &&
