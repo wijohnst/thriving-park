@@ -31,6 +31,9 @@ interface Props {
   isFormSubmitted: boolean;
   /** What should happen when we click the various edit icons? */
   onEditClick: () => void;
+  onCancelEditClick: () => void;
+  /** What should happen when we click the `X` icon? */
+  onCancelPhotoUploadClick: () => void;
 }
 
 export const ProfilePageRender = ({
@@ -42,6 +45,8 @@ export const ProfilePageRender = ({
   isFormSubmitting,
   isFormSubmitted,
   onEditClick,
+  onCancelEditClick,
+  onCancelPhotoUploadClick,
 }: Props) => {
   const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
   return (
@@ -55,20 +60,25 @@ export const ProfilePageRender = ({
         <Main>
           <ProfileHeader
             userInfo={userInfo}
-            isEdit={isPhotoUpload ? false : isEdit}
+            isEdit={isEdit}
             profilePictureURL={profilePictureURL}
-            onClick={onEditClick}
+            onClick={isPhotoUpload ? onCancelPhotoUploadClick : onEditClick}
+            isPhotoUpload={isPhotoUpload}
           />
           {isPhotoUpload && (
-            // eslint-disable-next-line no-console
             <Upload
+              // eslint-disable-next-line no-console
               onChange={() => console.log('On Change Event...')}
               accept="image/*"
               testId="edit-profile-pic-input"
             />
           )}
           {isEdit && (
-            <Edit isLoading={isFormSubmitting} isSubmitted={isFormSubmitted} />
+            <Edit
+              isLoading={isFormSubmitting}
+              isSubmitted={isFormSubmitted}
+              handleCancelClick={onCancelEditClick}
+            />
           )}
           {!isEdit && !hasIncompleteInfo && <Display userInfo={userInfo} />}
         </Main>

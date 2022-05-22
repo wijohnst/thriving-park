@@ -36,8 +36,8 @@ export const ProfilePage = ({ userId = '' }: Props) => {
     selectSession(state)
   );
 
-  // return isAuthenticated && data ? (
-  return isAuthenticated ? (
+  return isAuthenticated && data ? (
+    // return isAuthenticated ? (
     <ProfilePageWrapper>
       <ProfilePageRender
         isLoading={isAuthLoading || queryIsLoading}
@@ -53,8 +53,10 @@ export const ProfilePage = ({ userId = '' }: Props) => {
         isFormSubmitted={false}
         isFormSubmitting={false}
         onEditClick={
-          !isEdit ? () => setIsEdit(!isEdit) : () => setIsPhotoUpload(true)
+          !isEdit ? () => setIsEdit(true) : () => setIsPhotoUpload(true)
         }
+        onCancelEditClick={() => setIsEdit(false)}
+        onCancelPhotoUploadClick={() => setIsPhotoUpload(false)}
       />
     </ProfilePageWrapper>
   ) : (
