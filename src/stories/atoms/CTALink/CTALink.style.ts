@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 export const CTALinkWrapper = styled.div<{
   color: string;
+  hideUnderline: boolean;
 }>`
   padding: 0 0.25rem 0 0.25rem;
-  border-bottom: ${(props) => `solid thin ${props.color}`};
+  border-bottom: ${(props) =>
+    props.hideUnderline ? '' : `solid thin ${props.color}`};
   :hover {
     cursor: pointer;
   }
