@@ -13,20 +13,22 @@ import { IconLabel } from 'stories/molecules/IconLabel/IconLabel';
 import { Label } from 'stories/atoms/Label/Label';
 import { SizesEnum, UserInfo } from 'utils/sharedTypes';
 import { ReactComponent as PlusIcon } from 'stories/assets/plus_icon.svg';
+import { ReactComponent as XIcon } from 'stories/assets/ex_icon.svg';
 import { CTALink } from 'stories/atoms/CTALink/CTALink';
 
 interface Props {
   profilePictureURL: string;
   userInfo: UserInfo;
   isEdit: boolean;
+  isPhotoUpload: boolean;
   onClick: () => void;
 }
 
-// eslint-disable-next-line no-empty-pattern
 export const ProfileHeader = ({
   profilePictureURL,
   userInfo,
   isEdit,
+  isPhotoUpload,
   onClick,
 }: Props) => {
   const year = userInfo?.neighborDate?.getFullYear().toString();
@@ -36,7 +38,13 @@ export const ProfileHeader = ({
       <ProfilePicWrapper>
         {isEdit ? (
           <EditPic
-            icon={<PlusIcon height={24} width={24} />}
+            icon={
+              isPhotoUpload ? (
+                <XIcon height={24} width={24} />
+              ) : (
+                <PlusIcon height={24} width={24} />
+              )
+            }
             size={SizesEnum.Medium}
             onClick={onClick}
           >
