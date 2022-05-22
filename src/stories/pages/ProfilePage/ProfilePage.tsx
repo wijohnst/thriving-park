@@ -55,6 +55,7 @@ export const ProfilePage = ({ userId = '' }: Props) => {
         onEditClick={
           !isEdit ? () => setIsEdit(true) : () => setIsPhotoUpload(true)
         }
+        onCancelEditClick={() => setIsEdit(false)}
         onCancelPhotoUploadClick={() => setIsPhotoUpload(false)}
       />
     </ProfilePageWrapper>

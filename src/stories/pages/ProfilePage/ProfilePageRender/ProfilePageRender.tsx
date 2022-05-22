@@ -31,6 +31,7 @@ interface Props {
   isFormSubmitted: boolean;
   /** What should happen when we click the various edit icons? */
   onEditClick: () => void;
+  onCancelEditClick: () => void;
   /** What should happen when we click the `X` icon? */
   onCancelPhotoUploadClick: () => void;
 }
@@ -44,6 +45,7 @@ export const ProfilePageRender = ({
   isFormSubmitting,
   isFormSubmitted,
   onEditClick,
+  onCancelEditClick,
   onCancelPhotoUploadClick,
 }: Props) => {
   const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
@@ -58,7 +60,7 @@ export const ProfilePageRender = ({
         <Main>
           <ProfileHeader
             userInfo={userInfo}
-            isEdit={isPhotoUpload ? false : isEdit}
+            isEdit={isEdit}
             profilePictureURL={profilePictureURL}
             onClick={isPhotoUpload ? onCancelPhotoUploadClick : onEditClick}
             isPhotoUpload={isPhotoUpload}
@@ -72,7 +74,11 @@ export const ProfilePageRender = ({
             />
           )}
           {isEdit && (
-            <Edit isLoading={isFormSubmitting} isSubmitted={isFormSubmitted} />
+            <Edit
+              isLoading={isFormSubmitting}
+              isSubmitted={isFormSubmitted}
+              handleCancelClick={onCancelEditClick}
+            />
           )}
           {!isEdit && !hasIncompleteInfo && <Display userInfo={userInfo} />}
         </Main>
