@@ -5,12 +5,8 @@ import * as React from 'react';
 import { useAppSelector } from 'app/hooks';
 import { selectSession } from 'features/session/sessionSlice';
 import { useGetUserByIdQuery } from 'features/session/sessionApi';
-// import { ProfilePic } from 'stories/atoms/ProfilePic/ProfilePic';
-// import { SizesEnum } from 'utils/sharedTypes';
-import {
-  ProfilePageWrapper,
-  // TextPicWrapper,
-} from 'stories/pages/ProfilePage/ProfilePage.style';
+
+import { ProfilePageWrapper } from 'stories/pages/ProfilePage/ProfilePage.style';
 import { ProfilePageRender } from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender';
 
 interface Props {
