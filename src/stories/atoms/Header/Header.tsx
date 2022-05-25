@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 // Local Imports
 import { SizesEnum } from 'utils/sharedTypes';
-import { screenSizes } from 'utils/constants';
 
 interface Props {
   /** What should the header say? */
@@ -17,8 +16,6 @@ interface Props {
   subheadingText?: string | null;
   /** What size should the header be? */
   size?: SizesEnum;
-  /** What size would the screen be? */
-  screenSize: string;
 }
 
 const sizeTable: { [index: number]: string } = {
@@ -27,14 +24,9 @@ const sizeTable: { [index: number]: string } = {
   [SizesEnum.Large]: '3rem',
 };
 
-const Wrapper = styled.div<{
-  screenSize: string;
-}>`
+const Wrapper = styled.div`
   display: flex;
-  flex-direction: ${(props) =>
-    props.screenSize === screenSizes.Desktop ? 'row' : 'column'};
-  column-gap: ${(props) =>
-    props.screenSize === screenSizes.Desktop ? '0.8rem' : ''};
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 0.5rem 0 0.5rem;
@@ -63,10 +55,9 @@ export const Header = ({
   shouldAllCaps = true,
   subheadingText,
   size = SizesEnum.Large,
-  screenSize = screenSizes.Desktop,
 }: Props) => {
   return (
-    <Wrapper screenSize={screenSize}>
+    <Wrapper>
       <Text color={color} size={size}>
         {shouldAllCaps ? text.toUpperCase() : text}
       </Text>

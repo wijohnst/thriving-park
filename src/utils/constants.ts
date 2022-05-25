@@ -4,8 +4,6 @@ import { User } from '@auth0/auth0-react';
 // Local Imports
 import { AppLinkProps } from 'stories/atoms/AppLink/AppLink';
 
-// The original setting of breakpoints leaves the screen size ranged from 0px to 600px defined as Desktop.
-// So instead of using 'min-width', 'max-width' will be more accurate
 export const breakpoints: { [key: string]: string } = {
   mobile: '(max-width: 600px)',
   tablet: '(min-width: 600px)',

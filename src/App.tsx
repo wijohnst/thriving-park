@@ -29,7 +29,7 @@ const App = () => {
 
   useViewInit();
 
-  // Getting the current screen size from Redux store so all downstream components could have access to it
+  // Getting the current screen size from Redux store
   const screenSize = useAppSelector((state) => selectScreenSize(state));
 
   const {

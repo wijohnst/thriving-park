@@ -16,7 +16,7 @@ export const GrafHeaderWrapper = styled.div`
 
 export const TextContent = styled.div`
   display: flex;
-  flex-direction: 'column';
+  flex-direction: column;
   padding: 0;
 `;
 
