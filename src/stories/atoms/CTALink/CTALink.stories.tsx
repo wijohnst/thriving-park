@@ -35,6 +35,12 @@ Default.args = {
   onClick: () => console.log('CTALink clicked...'),
 };
 
+export const HideUnderline = Template.bind({});
+HideUnderline.args = {
+  ...Default.args,
+  hideUnderline: true,
+};
+
 export const WithColor = Template.bind({});
 WithColor.args = {
   ...Default.args,

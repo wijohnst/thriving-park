@@ -38,6 +38,7 @@ Default.args = {
     neighborDate: new Date('10/24/2018'),
     userBlurb: mockUserBlurb,
   },
+  // eslint-disable-next-line no-console
   onEditClick: () => console.log('Handle Edit click....'),
 };
 
@@ -71,4 +72,10 @@ export const Loading = Template.bind({});
 Loading.args = {
   ...Default.args,
   isLoading: true,
+};
+
+export const UploadPhoto = Template.bind({});
+UploadPhoto.args = {
+  ...Edit.args,
+  isPhotoUpload: true,
 };

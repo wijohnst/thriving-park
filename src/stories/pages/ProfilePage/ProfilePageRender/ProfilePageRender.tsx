@@ -12,12 +12,15 @@ import { Edit } from 'stories/pages/ProfilePage/ProfilePageRender/Edit/Edit';
 import { Display } from 'stories/pages/ProfilePage/ProfilePageRender/Display/Display';
 import { ProfileHeader } from 'stories/molecules/ProfileHeader/ProfileHeader';
 import { UserInfo } from 'utils/sharedTypes';
+import { Upload } from 'stories/Inputs/Upload/Upload';
 
 interface Props {
   /** Is the component loading? */
   isLoading: boolean;
   /** Is the user editing their profile? */
   isEdit: boolean;
+  /** Did the user click the edit profile picture icon? */
+  isPhotoUpload: boolean;
   /** What's the known information for the user? */
   userInfo: UserInfo;
   /** Where should we look for the user's profile picture? */
@@ -28,16 +31,22 @@ interface Props {
   isFormSubmitted: boolean;
   /** What should happen when we click the various edit icons? */
   onEditClick: () => void;
+  onCancelEditClick: () => void;
+  /** What should happen when we click the `X` icon? */
+  onCancelPhotoUploadClick: () => void;
 }
 
 export const ProfilePageRender = ({
   isLoading,
   isEdit,
+  isPhotoUpload,
   userInfo,
   profilePictureURL,
   isFormSubmitting,
   isFormSubmitted,
   onEditClick,
+  onCancelEditClick,
+  onCancelPhotoUploadClick,
 }: Props) => {
   const hasIncompleteInfo = Object.values(userInfo).some((value) => !value);
   return (
@@ -53,10 +62,23 @@ export const ProfilePageRender = ({
             userInfo={userInfo}
             isEdit={isEdit}
             profilePictureURL={profilePictureURL}
-            onClick={onEditClick}
+            onClick={isPhotoUpload ? onCancelPhotoUploadClick : onEditClick}
+            isPhotoUpload={isPhotoUpload}
           />
+          {isPhotoUpload && (
+            <Upload
+              // eslint-disable-next-line no-console
+              onChange={() => console.log('On Change Event...')}
+              accept="image/*"
+              testId="edit-profile-pic-input"
+            />
+          )}
           {isEdit && (
-            <Edit isLoading={isFormSubmitting} isSubmitted={isFormSubmitted} />
+            <Edit
+              isLoading={isFormSubmitting}
+              isSubmitted={isFormSubmitted}
+              handleCancelClick={onCancelEditClick}
+            />
           )}
           {!isEdit && !hasIncompleteInfo && <Display userInfo={userInfo} />}
         </Main>

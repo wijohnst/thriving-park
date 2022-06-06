@@ -60,8 +60,17 @@ CompleteUserData.args = {
 
 export const Edit = Template.bind({});
 Edit.args = {
+  ...CompleteUserData.args,
   ...WithPicture.args,
   isEdit: true,
   // eslint-disable-next-line no-console
   onClick: () => console.log('Handle Add Picture click...'),
+};
+
+export const PhotoUpload = Template.bind({});
+PhotoUpload.args = {
+  ...CompleteUserData.args,
+  ...Edit.args,
+  isPhotoUpload: true,
+  onClick: () => console.log('Handle Cancel Action click...'),
 };

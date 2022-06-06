@@ -7,7 +7,8 @@ import { render } from 'utils/test-utils';
 import * as stories from 'stories/pages/ProfilePage/ProfilePageRender/ProfilePageRender.stories';
 import { mockUserBlurb } from 'mocks/sharedMocks';
 
-const { Default, Loading, IncompleteUserInfo, Edit } = composeStories(stories);
+const { Default, Loading, IncompleteUserInfo, Edit, UploadPhoto } =
+  composeStories(stories);
 
 describe('ProfilePageRender unit tests', () => {
   it('Should render the Default ProfilePageRender component', () => {
@@ -32,5 +33,10 @@ describe('ProfilePageRender unit tests', () => {
     expect(getByTestId('editpic-wrapper')).toBeInTheDocument();
     expect(getByText('First Name')).toBeInTheDocument();
     expect(getByText('Last Name')).toBeInTheDocument();
+  });
+
+  it('Should render the Upload Photo story', () => {
+    const { getByTestId } = render(<UploadPhoto />);
+    expect(getByTestId('edit-profile-pic-input')).toBeInTheDocument();
   });
 });
