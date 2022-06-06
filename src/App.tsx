@@ -18,6 +18,9 @@ import { NavLinks } from 'utils/constants';
 import useViewInit from 'hooks/useViewInit';
 import { AuthCTA } from 'stories/molecules/AuthCTA/AuthCTA';
 
+import { useAppSelector } from 'app/hooks';
+import { selectScreenSize } from 'features/presentation/presentationSlice';
+
 const App = () => {
   const { loginWithRedirect, logout, isAuthenticated, isLoading, user } =
     useAuth0();
@@ -25,6 +28,9 @@ const App = () => {
   const dispatch = useAppDispatch();
 
   useViewInit();
+
+  // Getting the current screen size from Redux store
+  const screenSize = useAppSelector((state) => selectScreenSize(state));
 
   const {
     // data: userData,
@@ -65,7 +71,7 @@ const App = () => {
           isAuthenticated={isAuthenticated}
           onClick={isAuthenticated ? () => logout() : () => loginWithRedirect()}
         />
-        <GrafHeader isMobile={false} />
+        <GrafHeader screenSize={screenSize} />
         <NavBar appLinks={NavLinks} />
         <Routes>
           <Route path="/" element={<span>Home</span>} />

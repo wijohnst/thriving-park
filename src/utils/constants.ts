@@ -5,9 +5,17 @@ import { User } from '@auth0/auth0-react';
 import { AppLinkProps } from 'stories/atoms/AppLink/AppLink';
 
 export const breakpoints: { [key: string]: string } = {
-  mobile: '(min-width: 600px)',
-  tablet: '(min-width: 1000px)',
+  mobile: '(max-width: 600px)',
+  tablet: '(min-width: 600px)',
   desktop: '(min-width: 1500px)',
+};
+
+export const defaultScreenSize = 'Desktop';
+
+export const screenSizes: { [key: string]: string } = {
+  Mobile: 'Mobile',
+  Tablet: 'Tablet',
+  Desktop: 'Desktop',
 };
 
 export const TestUser: User = {

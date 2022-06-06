@@ -15,6 +15,8 @@ import { sessionApi } from 'features/session/sessionApi';
 import { TestUser } from 'utils/constants';
 import { AuthCTA } from 'stories/molecules/AuthCTA/AuthCTA';
 
+import { screenSizes } from 'utils/constants';
+
 const store = configureStore({
   reducer: {
     session: sessionReducer,
@@ -79,7 +81,7 @@ Default.args = {
       // eslint-disable-next-line no-console
       onClick={() => console.log('Handle Auth click...')}
     />,
-    <GrafHeader isMobile={false} key={0} />,
+    <GrafHeader screenSize={screenSizes.Desktop} key={0} />,
     // @ts-ignore
     <NavBar appLinks={NavBar.args?.appLinks} />,
     <ProfilePage key={1} userId={undefined} />,

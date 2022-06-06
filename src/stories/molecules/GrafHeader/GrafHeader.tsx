@@ -13,27 +13,42 @@ import {
 } from 'stories/molecules/GrafHeader/GrafHeader.style';
 import { ReactComponent as Logo } from 'stories/assets/thriving_park_logo.svg';
 import SvgIcon from 'stories/atoms/SVGIcon/svgIcon';
+import { screenSizes, defaultScreenSize } from 'utils/constants';
 
 interface Props {
-  isMobile: boolean;
+  screenSize: string;
 }
 
-export const GrafHeader = ({ isMobile = false }: Props) => {
+export const GrafHeader = ({ screenSize = defaultScreenSize }: Props) => {
+  const getSize = () => {
+    if (screenSize === screenSizes.Mobile) {
+      return SizesEnum.Small;
+    }
+    if (screenSize === screenSizes.Tablet) {
+      return SizesEnum.Medium;
+    }
+    return SizesEnum.Large;
+  };
+
   return (
     <GrafHeaderWrapper>
       <TextContent>
         <Header
-          text={isMobile ? 'Thriving Park' : 'Driving Park'}
-          subheadingText={isMobile ? null : 'Always on the move'}
-          size={isMobile ? SizesEnum.Small : SizesEnum.Large}
+          text={
+            screenSize === screenSizes.Mobile ? 'Thriving Park' : 'Driving Park'
+          }
+          subheadingText={
+            screenSize === screenSizes.Mobile ? null : 'Always on the move'
+          }
+          size={getSize()}
         />
-        {!isMobile && (
+        {screenSize !== screenSizes.Mobile && (
           <GrafWrapper>
             <GrafLabel text="Thriving" rotation={-7} />
           </GrafWrapper>
         )}
       </TextContent>
-      {!isMobile && (
+      {screenSize !== screenSizes.Mobile && (
         <IconWrapper>
           {/* @ts-ignore - SVG exports as incorrect type */}
           <SvgIcon Icon={Logo} height={60} />
