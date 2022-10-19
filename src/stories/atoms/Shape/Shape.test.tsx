@@ -16,7 +16,7 @@ const { Default } = composeStories(stories);
 describe('Shape unit test', () => {
   it('Should render the Shape component', () => {
     const { getByTestId } = render(<Default />);
-    expect(getByTestId('shape-test')).toBeInTheDocument();
+    expect(getByTestId('shape-test')).toHaveAttribute('data-testid');
   })
 });
 

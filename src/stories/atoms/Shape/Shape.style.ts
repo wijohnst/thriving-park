@@ -5,7 +5,7 @@ export const ShapeDiv = styled.div<{
   shapeWidth: string;
   shapeHeight: string;
 }>`
-  width: ${(props) => props.shapeWidth}px;
-  height: ${(props) => props.shapeHeight}px;
-  background-color: ${(props) => props.backgroundColor};
+  width: ${(props) => `${props.shapeWidth}`};
+  height: ${(props) => `${props.shapeHeight}`};
+  background-color: ${(props) => `${props.backgroundColor}`};
 `;

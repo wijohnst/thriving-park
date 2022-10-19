@@ -2,6 +2,7 @@ import * as React from 'react';
 
 // Local Imports
 import { ShapeDiv } from 'stories/atoms/Shape/Shape.style';
+import { defaultTheme } from 'themes';
 
 interface Props {
   backgroundColor?: string;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export const Shape = ({
-  backgroundColor = '#c4c4c3',
+  backgroundColor = defaultTheme.primaryGray,
   shapeHeight = '10rem',
   shapeWidth = '10rem',
   testId = 'shape-test',
