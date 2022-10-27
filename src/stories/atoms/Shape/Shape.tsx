@@ -6,9 +6,9 @@ import { defaultTheme } from 'themes';
 
 interface Props {
   backgroundColor?: string;
-  shapeHeight: string;
-  shapeWidth: string;
-  testId: string;
+  shapeHeight?: string;
+  shapeWidth?: string;
+  testId?: string;
 }
 
 export const Shape = ({

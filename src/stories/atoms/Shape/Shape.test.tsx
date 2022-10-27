@@ -5,19 +5,33 @@ import { composeStories } from '@storybook/testing-react';
 // Local Imports
 import { render } from 'utils/test-utils';
 import * as stories from 'stories/atoms/Shape/Shape.stories';
+import { defaultTheme } from 'themes'
 
 beforeAll(() => {});
 afterEach(() => {});
 afterAll(() => {});
 
+const { Default, Rectangle, Color } = composeStories(stories);
 
-const { Default } = composeStories(stories);
-
-describe('Shape unit test', () => {
-  it('Should render the Shape component', () => {
+describe('Default Shape unit test', () => {
+  it('Should render the Default Shape component', () => {
     const { getByTestId } = render(<Default />);
     expect(getByTestId('shape-test')).toHaveAttribute('data-testid');
-  })
+  });
+});
+
+describe('Rectangle Shape unit test', () => {
+  it('Should render the Rectangle Shape component', () => {
+    const { getByTestId } = render(<Rectangle />);
+    expect(getByTestId('shape-test')).toHaveStyle('width: 20rem')
+  });
+});
+
+describe('Color Shape unit test', () => {
+  it('Should render the Color Shape component', () => {
+    const { getByTestId } = render(<Color />);
+    expect(getByTestId('shape-test')).toHaveStyle(`background-color: ${defaultTheme.brightGreen}`)
+  });
 });
 
 

@@ -14,11 +14,7 @@ export default {
 const Template: ComponentStory<typeof Shape> = (args) => <Shape {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  backgroundColor: defaultTheme.primaryGray,
-  shapeHeight: '10rem',
-  shapeWidth: '10rem',
-};
+Default.args = {};
 
 export const Rectangle = Template.bind({});
 Rectangle.args = {
