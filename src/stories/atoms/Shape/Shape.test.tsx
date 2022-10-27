@@ -16,7 +16,10 @@ const { Default, Rectangle, Color } = composeStories(stories);
 describe('Default Shape unit test', () => {
   it('Should render the Default Shape component', () => {
     const { getByTestId } = render(<Default />);
-    expect(getByTestId('shape-test')).toHaveAttribute('data-testid');
+    expect(getByTestId('shape-test')).toHaveStyle(`
+      background-color: ${defaultTheme.primaryGray};
+      width: 10rem;
+    `);
   });
 });
 
