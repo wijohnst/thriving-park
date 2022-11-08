@@ -2,8 +2,6 @@
 import React, { ReactNode } from 'react';
 
 // Local Imports
-// import { DropdownDiv } from './Dropdown.style';
-// import { defaultTheme } from 'themes';
 import { Button } from 'stories/atoms/Button/Button';
 // I know the caret has to wrapped in a wrapper so we can adjust it's placement and allow for roatation, but my first goal was just to render the Caret somewhere on the button first
 // import { DropCaretWrapper } from 'stories/molecules/Dropdown/Dropdown.style';
@@ -21,6 +19,7 @@ interface Props {
 export const Dropdown = ({
   isMobile = false,
   label = 'DROPDOWN BUTTON',
+  // this ia placeholder, idea is to have this function change the orientation
   onClick: handleClick = () => console.log('Click!'),
   children = <CaretSvg/>
 
