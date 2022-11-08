@@ -19,7 +19,7 @@ interface Props {
 export const Dropdown = ({
   isMobile = false,
   label = 'DROPDOWN BUTTON',
-  // this ia placeholder, idea is to have this function change the orientation
+  // this ia placeholder, idea is to have this function change the orientation. Will develop during later github issue.
   onClick: handleClick = () => console.log('Click!'),
   children = <CaretSvg/>
 
